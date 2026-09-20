@@ -82,19 +82,18 @@ export default function ContactFooter() {
                   <div className="flex items-start gap-3.5">
                     <span className="material-symbols-outlined text-[#B8985A] text-[22px] shrink-0 mt-0.5">location_on</span>
                     <p className="leading-relaxed">
-                      Arvista Corporate Tower, Suite 4400, Financial District Corridor, Marine Drive / Infopark Expressway, Kochi, Kerala 682042
+                      2nd Floor Skytowers, HMT Junction, Kalamassery, Ernakulam, Kerala 683503
                     </p>
                   </div>
                   <div className="flex items-start gap-3.5">
                     <span className="material-symbols-outlined text-[#B8985A] text-[22px] shrink-0 mt-0.5">call</span>
                     <div>
-                      <p className="font-medium text-white">+91 98470 00000</p>
-                      <p className="text-white/60 text-xs">Direct Chambers Line: +91 (484) 289-4400</p>
+                      <p className="font-medium text-white">+91 9016500265</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3.5">
                     <span className="material-symbols-outlined text-[#B8985A] text-[22px] shrink-0 mt-0.5">mail</span>
-                    <p className="text-white">advisory@arvistainternational.com</p>
+                    <p className="text-white">info@arvistainternational.com</p>
                   </div>
                   <div className="flex items-start gap-3.5">
                     <span className="material-symbols-outlined text-[#B8985A] text-[22px] shrink-0 mt-0.5">schedule</span>
@@ -171,12 +170,12 @@ export default function ContactFooter() {
             <div className="lg:col-span-3 flex flex-col gap-3">
               <h4 className="text-xs uppercase tracking-[0.2em] text-[#B8985A] font-semibold">Executive Contact</h4>
               <p className="text-xs text-white/70 font-light mt-1 leading-relaxed">
-                Arvista Tower, Suite 4400<br/>
-                Financial District Corridor, Kochi, Kerala 682042
+                2nd Floor Skytowers, HMT Junction<br/>
+                Kalamassery, Ernakulam, Kerala 683503
               </p>
               <p className="text-xs text-white/70 font-light mt-1">
-                <span className="text-white">Chambers:</span> +91 (484) 289-4400<br/>
-                <span className="text-white">Email:</span> liaison@arvistainternational.com
+                <span className="text-white">Phone:</span> +91 9016500265<br/>
+                <span className="text-white">Email:</span> info@arvistainternational.com
               </p>
             </div>
 
@@ -196,7 +195,7 @@ export default function ContactFooter() {
 
       {/* FLOATING WHATSAPP LIAISON BADGE */}
       <aside aria-label="Direct Liaison WhatsApp" className="fixed bottom-6 right-6 z-50">
-        <a className="flex items-center gap-2.5 bg-[#0B1F3A]/95 text-[#B8985A] border border-[#B8985A]/50 px-4 py-2.5 shadow-2xl hover:bg-[#B8985A] hover:text-[#0B1F3A] transition-all rounded-[2px] backdrop-blur-md group" href="https://wa.me/919847000000" rel="noopener noreferrer" target="_blank">
+        <a className="flex items-center gap-2.5 bg-[#0B1F3A]/95 text-[#B8985A] border border-[#B8985A]/50 px-4 py-2.5 shadow-2xl hover:bg-[#B8985A] hover:text-[#0B1F3A] transition-all rounded-[2px] backdrop-blur-md group" href="https://wa.me/919016500265" rel="noopener noreferrer" target="_blank">
           <span className="material-symbols-outlined text-[20px]">chat</span>
           <span className="text-[11px] font-semibold tracking-wider uppercase font-montserrat">Direct Liaison</span>
         </a>
