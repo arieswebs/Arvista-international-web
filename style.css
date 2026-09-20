@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0B1F3A;
+  --color-navy-dark: #071527;
+  --color-navy-light: #12305A;
+  --color-navy-surface: #0e2442;
+  --color-gold: #B8985A;
+  --color-gold-light: #d4b77d;
+  --color-gold-dark: #8c6f37;
+  --color-gold-soft: #FDF8F0;
+  --color-parchment: #F7F5F0;
+  --color-slate-subtle: #5A6578;
+  --color-slate-charcoal: #1A2230;
+  --font-cinzel: "Cinzel", serif;
+  --font-montserrat: "Montserrat", sans-serif;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@keyframes luxuryFadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } } 
+@keyframes lineGrow { from { width: 0px; } to { width: 40px; } } 
+@keyframes scrollPulse { 0%, 100% { opacity: 0.3; transform: scaleY(0.6); } 50% { opacity: 1; transform: scaleY(1.1); } } 
+
+.hero-line-anim { animation: lineGrow 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards; } 
+.hero-fade-1 { animation: luxuryFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; } 
+.hero-fade-2 { animation: luxuryFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both; } 
+.hero-fade-3 { animation: luxuryFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both; } 
+.hero-fade-4 { animation: luxuryFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both; } 
+.scroll-indicator-pulse { animation: scrollPulse 2s ease-in-out infinite; transform-origin: top; } 
+
+::-webkit-scrollbar { width: 6px; } 
+::-webkit-scrollbar-track { background: #0B1F3A; } 
+::-webkit-scrollbar-thumb { background: #B8985A; }
