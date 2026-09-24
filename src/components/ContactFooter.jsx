@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function ContactFooter() {
   const [submitted, setSubmitted] = useState(false);
@@ -75,9 +76,9 @@ export default function ContactFooter() {
             <div className="lg:col-span-5 flex flex-col justify-between space-y-8">
               <div>
                 <div className="mb-6">
-                  <img alt="ARVISTA International" className="h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xcd8tXFlPyvjmti4bb8KTnF_v7NH5E57UV1_vyZnPb2y2CSDAE8QM-DYwn9CXbtt7qXsSvx9gRNMn86AhWsQAEAexIQ1TbKwBjipHIoKYGFOwLgrh6ZVAmEFC2bTFg25pm-km1Io3Kqad8Rfqua46zksi19c6kfjshmn7O9xCQJ-b8YiKU-TfXcvFKhx0KTVSpNDymyVAKWao1sIxmKsyFB9aHg3B8NsdAWe2lH_Br5tw3zJ3aJ6uZZw" />
+                  <img alt="ARVISTA International" className="h-9 w-auto object-contain brightness-0 invert opacity-95" src="/ArvistaPNGUP.png" />
                 </div>
-                <h4 className="font-cinzel text-xl text-white font-semibold mb-6">Kerala Corporate Chambers</h4>
+                <h4 className="font-cinzel text-xl text-white font-semibold mb-6">Arvista International</h4>
                 <div className="space-y-5 text-xs sm:text-sm text-white/80 font-light">
                   <div className="flex items-start gap-3.5">
                     <span className="material-symbols-outlined text-[#B8985A] text-[22px] shrink-0 mt-0.5">location_on</span>
@@ -130,9 +131,9 @@ export default function ContactFooter() {
             
             {/* Brand & Summary */}
             <div className="lg:col-span-4 flex flex-col gap-4">
-              <a href="#">
-                <img alt="ARVISTA International" className="h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xcd8tXFlPyvjmti4bb8KTnF_v7NH5E57UV1_vyZnPb2y2CSDAE8QM-DYwn9CXbtt7qXsSvx9gRNMn86AhWsQAEAexIQ1TbKwBjipHIoKYGFOwLgrh6ZVAmEFC2bTFg25pm-km1Io3Kqad8Rfqua46zksi19c6kfjshmn7O9xCQJ-b8YiKU-TfXcvFKhx0KTVSpNDymyVAKWao1sIxmKsyFB9aHg3B8NsdAWe2lH_Br5tw3zJ3aJ6uZZw" />
-              </a>
+              <Link to="/">
+                <img alt="ARVISTA International" className="h-9 w-auto object-contain brightness-0 invert opacity-95 transition-opacity hover:opacity-100" src="/ArvistaPNGUP.png" />
+              </Link>
               <p className="text-xs sm:text-sm text-white/60 leading-relaxed font-light mt-2 max-w-sm">
                 Institutional advisory, statutory liaisoning, and corporate governance for enterprise leaders, family offices, and multinational commercial operations across India.
               </p>
@@ -158,11 +159,11 @@ export default function ContactFooter() {
             <div className="lg:col-span-3 flex flex-col gap-3">
               <h4 className="text-xs uppercase tracking-[0.2em] text-[#B8985A] font-semibold">Advisory Scope</h4>
               <ul className="space-y-2 text-xs text-white/70 font-light mt-1">
-                <li><a className="hover:text-white transition-colors" href="#services-explorer">Company Incorporation (MCA)</a></li>
-                <li><a className="hover:text-white transition-colors" href="#services-explorer">GST & Corporate Fiduciary</a></li>
-                <li><a className="hover:text-white transition-colors" href="#services-explorer">Title Scrutiny & Property Mutation</a></li>
-                <li><a className="hover:text-white transition-colors" href="#services-explorer">Pollution & Municipal NOC Clearances</a></li>
-                <li><a className="hover:text-white transition-colors" href="#services-explorer">Clinical & Hospital Registrations</a></li>
+                <li><Link className="hover:text-white transition-colors" to="/services/company-formation">Company Incorporation (MCA)</Link></li>
+                <li><Link className="hover:text-white transition-colors" to="/services/gst-registration">GST & Corporate Fiduciary</Link></li>
+                <li><Link className="hover:text-white transition-colors" to="/services/title-verification">Title Scrutiny & Property Mutation</Link></li>
+                <li><Link className="hover:text-white transition-colors" to="/services/pollution-control-clearance">Pollution & Municipal NOC Clearances</Link></li>
+                <li><Link className="hover:text-white transition-colors" to="/services/hospital-registration">Clinical & Hospital Registrations</Link></li>
               </ul>
             </div>
 

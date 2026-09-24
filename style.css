@@ -40,3 +40,21 @@
 ::-webkit-scrollbar { width: 6px; } 
 ::-webkit-scrollbar-track { background: #0B1F3A; } 
 ::-webkit-scrollbar-thumb { background: #B8985A; }
+
+.mega-menu-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #B8985A transparent;
+}
+.mega-menu-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.mega-menu-scroll::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+.mega-menu-scroll::-webkit-scrollbar-thumb {
+  background: #D4B77D !important;
+  border-radius: 9999px;
+}
+.mega-menu-scroll::-webkit-scrollbar-thumb:hover {
+  background: #B8985A !important;
+}

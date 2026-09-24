@@ -60,7 +60,7 @@ export default function About() {
           {/* Right Column: Architectural Photo with Overlay Card */}
           <div className="lg:col-span-6 relative">
             <div className="relative w-full aspect-[4/3] rounded-[2px] overflow-hidden border border-[#E5E0D5] shadow-2xl">
-              <img alt="ARVISTA Institutional Headquarters" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XmcBLPS4PkthzIxnTymGIYJANBF1FSgvRK2e6NYha2KUn0PeHNU1Jeuj-drzNPpD1lDSWcQ63iL-oAb_CRKQn33WFxwyoCFtF9snnLuuylVq_02GYa8btKHnKm2FeMMVhl2VC6UF1Kra0udWErxcEoTiwEEEWHCsJlKNC6tYfZnEW1f80h-km8IPhOFR4EyO_utLMYDzZf0eW-xCwgvqHpM1iF8bj-wu1f_DfpPLs0GB-Na9MVgZI-oA" />
+              <img alt="ARVISTA Institutional Headquarters" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F3A]/70 via-transparent to-transparent"></div>
             </div>
             

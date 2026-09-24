@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Pillars() {
   return (
     <section className="bg-[#F7F5F0] py-24 sm:py-28 border-b border-[#E7E2D8]" id="core-pillars">
@@ -31,9 +33,9 @@ export default function Pillars() {
               </ul>
             </div>
             <div className="mt-8 pt-6 border-t border-[#F0ECE1]">
-              <a className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-[#0B1F3A] font-semibold group-hover:text-[#B8985A] transition-colors" href="#services-explorer">
+              <Link className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-[#0B1F3A] font-semibold group-hover:text-[#B8985A] transition-colors" to="/services/company-formation">
                 Learn more <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -55,9 +57,9 @@ export default function Pillars() {
               </ul>
             </div>
             <div className="mt-8 pt-6 border-t border-[#F0ECE1]">
-              <a className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-[#0B1F3A] font-semibold group-hover:text-[#B8985A] transition-colors" href="#services-explorer">
+              <Link className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-[#0B1F3A] font-semibold group-hover:text-[#B8985A] transition-colors" to="/services/labour-registration">
                 Learn more <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -79,9 +81,9 @@ export default function Pillars() {
               </ul>
             </div>
             <div className="mt-8 pt-6 border-t border-[#F0ECE1]">
-              <a className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-[#0B1F3A] font-semibold group-hover:text-[#B8985A] transition-colors" href="#services-explorer">
+              <Link className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-[#0B1F3A] font-semibold group-hover:text-[#B8985A] transition-colors" to="/services/pollution-control-clearance">
                 Learn more <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

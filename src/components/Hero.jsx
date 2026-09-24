@@ -19,7 +19,7 @@ export default function Hero() {
             <p className="text-white/70 text-base sm:text-lg max-w-2xl mb-10 leading-relaxed font-light hero-fade-3 font-montserrat">End-to-end business, HR and project consultancy, from company formation to compliance, licensing and documentation.</p>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-6 w-full sm:w-auto hero-fade-4">
               <a className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#B8985A] hover:bg-[#c9a96b] text-[#0B1F3A] text-xs uppercase tracking-[0.18em] font-semibold rounded-[2px] shadow-lg transition-all duration-300 group font-montserrat" href="#consultation-desk">
-                <span>BOOK A CONSULTATION</span>
+                <span>CONTACT US</span>
                 <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 stroke-[#0B1F3A]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" strokeLinecap="round" strokeLinejoin="round"></path></svg>
               </a>
               <a className="inline-flex items-center justify-center text-white/80 hover:text-white underline decoration-[#B8985A] decoration-1 underline-offset-8 text-xs sm:text-sm uppercase tracking-wider font-medium transition-colors py-2 font-montserrat" href="#services-explorer">Explore our services</a>
