@@ -104,10 +104,10 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'HOME', href: '/' },
-    { name: 'ABOUT US', href: '/#why-arvista' },
-    { name: 'SERVICES', href: '/#services-explorer', isServices: true },
-    { name: 'CAREERS', href: '/#careers' },
-    { name: 'BLOGS', href: '/#blogs' },
+    { name: 'ABOUT US', href: '/about' },
+    { name: 'SERVICES', href: '/#core-pillars', isServices: true },
+    { name: 'CAREERS', href: '/careers' },
+    { name: 'BLOGS', href: '/blogs' },
     { name: 'FAQS', href: '/#faq' },
     { name: 'CONTACT US', href: '/#consultation-desk' }
   ];
@@ -149,7 +149,9 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-[100] bg-[#F7F5F0]/95 backdrop-blur-xl border-b border-[#E5E0D5]/80 shadow-[0_4px_30px_rgba(0,0,0,0.04)] transition-all duration-500">
+      <header className={`fixed top-0 left-0 w-full z-[100] border-b border-[#E5E0D5]/80 shadow-[0_4px_30px_rgba(0,0,0,0.04)] transition-all duration-300 ${
+        isMegaMenuOpen ? 'bg-[#F7F5F0]' : 'bg-[#F7F5F0]/95 backdrop-blur-xl'
+      }`}>
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 lg:h-24 flex items-center justify-between">
           
           {/* Brand Logo (Left) */}
@@ -160,7 +162,7 @@ export default function Navbar() {
             className="flex items-center shrink-0 z-50 group"
           >
             <img 
-              src="/ArvistaPNGUP.png" 
+              src="/ArvistaPNGUP.png?v=3" 
               alt="ARVISTA INTERNATIONAL" 
               className="h-7 sm:h-8 lg:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
             />
@@ -245,139 +247,276 @@ export default function Navbar() {
             </button>
           </div>
         </div>
+      </header>
 
-        {/* ========================================================================= */}
-        {/* DESKTOP MEGA MENU DROPDOWN                                               */}
-        {/* ========================================================================= */}
+      {/* ========================================================================= */}
+      {/* DESKTOP MEGA MENU DROPDOWN — LUXURY INSTITUTIONAL ADVISORY PAVILION       */}
+      {/* ========================================================================= */}
         <div 
           ref={megaMenuRef}
           onMouseEnter={openMegaMenu}
           onMouseLeave={closeMegaMenuWithDelay}
-          className={`hidden lg:block fixed top-16 sm:top-20 lg:top-24 left-0 w-full z-[95] bg-[#FAF8F5] border-b border-[#E5E0D5] shadow-[0_25px_60px_-15px_rgba(11,31,58,0.2)] transition-all duration-300 ease-out origin-top ${
+          style={{ backgroundColor: '#FAF8F4' }}
+          className={`hidden lg:block fixed top-16 sm:top-20 lg:top-24 left-0 w-full z-[120] border-t-2 border-[#B8985A] border-b border-[#E6E0D5] shadow-[0_35px_80px_rgba(11,31,58,0.35)] transition-all duration-300 ease-out origin-top ${
             isMegaMenuOpen 
               ? 'opacity-100 translate-y-0 visible pointer-events-auto' 
               : 'opacity-0 -translate-y-3 invisible pointer-events-none'
           }`}
         >
-          <div className="max-w-[1440px] mx-auto px-6 xl:px-10 pt-6 pb-4">
+          <div className="max-w-[1440px] mx-auto px-6 xl:px-10 pt-6 pb-5">
             
-            {/* Mega Menu Top Category Tabs */}
-            <div className="flex items-center justify-between border-b border-[#E5E0D5] pb-3 mb-4 gap-4">
-              <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
-                <span className="text-[10px] tracking-[0.25em] text-[#B8985A] uppercase font-bold mr-1 hidden xl:inline shrink-0">
-                  PRACTICES:
-                </span>
-                {serviceCategories.map((category) => {
-                  const count = servicesData[category.id]?.length || 0;
-                  const isActive = activeCategory === category.id;
-                  return (
-                    <button
-                      key={category.id}
-                      type="button"
-                      onMouseEnter={() => setActiveCategory(category.id)}
-                      onClick={() => setActiveCategory(category.id)}
-                      className={`flex items-center gap-2 px-3 py-1.5 rounded-[2px] text-xs font-semibold tracking-wider uppercase transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0 ${
-                        isActive
-                          ? 'bg-[#0B1F3A] border border-[#0B1F3A] text-white shadow-sm'
-                          : 'bg-white/80 border border-[#E2DDD3] text-[#0B1F3A]/80 hover:text-[#0B1F3A] hover:bg-white hover:border-[#B8985A]/60'
-                      }`}
-                    >
-                      <span className={`material-symbols-outlined text-[16px] ${isActive ? 'text-[#B8985A]' : 'text-[#B8985A]/80'}`}>
-                        {category.icon}
-                      </span>
-                      <span>{category.label}</span>
-                      <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-medium ${
-                        isActive ? 'bg-white/20 text-white' : 'bg-[#EFECE6] text-[#0B1F3A]/80'
-                      }`}>
-                        {count}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-
-              <NavAnchor
-                href="/#services-explorer"
-                onClick={() => setIsMegaMenuOpen(false)}
-                className="inline-flex items-center gap-1.5 text-xs uppercase tracking-wider font-semibold text-[#B8985A] hover:text-[#9a7e48] transition-colors whitespace-nowrap group shrink-0"
-              >
-                <span>Full Services Directory</span>
-                <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">
-                  arrow_forward
-                </span>
-              </NavAnchor>
-            </div>
-
-            {/* Active Category Header Bar */}
-            <div className="flex items-center justify-between mb-3">
-              <div className="flex items-center gap-2.5">
-                <span className="material-symbols-outlined text-[#B8985A] text-[20px]">
-                  {currentCategoryData?.icon}
-                </span>
-                <h3 className="font-cinzel text-sm sm:text-base font-bold text-[#0B1F3A] tracking-wide">
-                  {currentCategoryData?.label}
-                </h3>
-                <span className="text-xs text-slate-subtle">
-                  ({activeServicesList.length} services available)
-                </span>
-              </div>
-              <span className="text-[11px] text-slate-subtle italic hidden sm:inline">
-                Click any service to view complete statutory scope, procedures & deliverables
-              </span>
-            </div>
-
-            {/* Services Grid for Active Category */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 max-h-[58vh] overflow-y-auto pr-2 pb-3 mega-menu-scroll">
-              {activeServicesList.map((service) => (
-                <Link
-                  key={service.slug}
-                  to={`/services/${service.slug}`}
-                  onClick={() => setIsMegaMenuOpen(false)}
-                  className="group flex items-start gap-2.5 px-3 py-2 rounded-[2px] bg-white hover:bg-[#F4EFE6] border border-[#E9E5DD] hover:border-[#B8985A]/80 shadow-[0_1px_2px_rgba(0,0,0,0.02)] hover:shadow-md transition-all duration-200 h-[56px]"
-                >
-                  <span className="material-symbols-outlined text-[18px] text-[#B8985A] mt-0.5 shrink-0 group-hover:scale-110 transition-transform">
-                    {service.icon || 'check_circle'}
-                  </span>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between gap-1">
-                      <h4 className="text-xs font-semibold text-[#0B1F3A] group-hover:text-[#B8985A] transition-colors truncate">
-                        {service.name}
-                      </h4>
-                      <span className="material-symbols-outlined text-[13px] text-[#0B1F3A]/25 group-hover:text-[#B8985A] group-hover:translate-x-0.5 transition-all shrink-0">
-                        chevron_right
+            {/* Split Master-Detail Layout */}
+            <div className="flex items-stretch gap-6 xl:gap-8 min-h-[460px]">
+              
+              {/* Left Column: Practice Divisions Selector */}
+              <div className="w-[300px] xl:w-[330px] shrink-0 flex flex-col justify-between border-r border-[#EAE4D8] pr-5 xl:pr-6">
+                <div>
+                  {/* Section Title */}
+                  <div className="flex items-center justify-between pb-3 mb-2.5 border-b border-[#E8E2D4]">
+                    <div className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#B8985A]"></span>
+                      <span className="text-[10.5px] font-bold tracking-[0.25em] text-[#0B1F3A] uppercase font-montserrat">
+                        Practice Divisions
                       </span>
                     </div>
-                    <p className="text-[10px] text-slate-subtle truncate mt-0.5 leading-snug">
-                      {service.desc}
-                    </p>
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#B8985A] font-semibold">
+                      06 Areas
+                    </span>
                   </div>
-                </Link>
-              ))}
+
+                  {/* Vertical List of Practice Divisions */}
+                  <div className="flex flex-col gap-1">
+                    {serviceCategories.map((category) => {
+                      const count = servicesData[category.id]?.length || 0;
+                      const isActive = activeCategory === category.id;
+                      return (
+                        <button
+                          key={category.id}
+                          type="button"
+                          onMouseEnter={() => setActiveCategory(category.id)}
+                          onClick={() => setActiveCategory(category.id)}
+                          className={`w-full text-left py-2.5 px-3 rounded-[2px] transition-all duration-200 cursor-pointer relative group flex items-center justify-between ${
+                            isActive
+                              ? 'bg-[#0B1F3A] text-white shadow-md'
+                              : 'text-[#0B1F3A] hover:bg-[#F4EFE6]/80'
+                          }`}
+                        >
+                          {/* Left Accent Bar for Active State */}
+                          {isActive && (
+                            <span className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#B8985A]" />
+                          )}
+
+                          <div className="flex items-center gap-3 min-w-0 pr-2">
+                            <span className={`material-symbols-outlined text-[19px] shrink-0 transition-colors ${
+                              isActive ? 'text-[#B8985A]' : 'text-[#B8985A]/80 group-hover:text-[#B8985A]'
+                            }`}>
+                              {category.icon}
+                            </span>
+                            <div className="min-w-0">
+                              <h4 className={`text-xs xl:text-[13px] font-cinzel font-semibold tracking-wide truncate ${
+                                isActive ? 'text-white' : 'text-[#0B1F3A] group-hover:text-[#0B1F3A]'
+                              }`}>
+                                {category.label}
+                              </h4>
+                              <p className={`text-[10px] leading-tight truncate transition-colors ${
+                                isActive ? 'text-[#B8985A]' : 'text-slate-subtle'
+                              }`}>
+                                {category.tagline}
+                              </p>
+                            </div>
+                          </div>
+
+                          <div className="flex items-center gap-1.5 shrink-0">
+                            <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded-[2px] ${
+                              isActive ? 'bg-[#16335C] text-[#B8985A]' : 'bg-[#EAE4D8]/70 text-[#0B1F3A]/70'
+                            }`}>
+                              {count}
+                            </span>
+                            <span className={`material-symbols-outlined text-[15px] transition-transform duration-200 ${
+                              isActive ? 'text-[#B8985A] translate-x-0.5' : 'text-transparent group-hover:text-[#0B1F3A]/30'
+                            }`}>
+                              chevron_right
+                            </span>
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Directory Link at bottom of left column */}
+                <div className="pt-3 border-t border-[#E8E2D4]">
+                  <NavAnchor
+                    href="/#core-pillars"
+                    onClick={() => setIsMegaMenuOpen(false)}
+                    className="w-full py-2 px-2 text-[10.5px] uppercase tracking-wider font-semibold text-[#0B1F3A] hover:text-[#B8985A] transition-colors flex items-center justify-between group"
+                  >
+                    <span>Strategic Practice Matrix</span>
+                    <span className="material-symbols-outlined text-[15px] group-hover:translate-x-1 transition-transform text-[#B8985A]">
+                      arrow_forward
+                    </span>
+                  </NavAnchor>
+                </div>
+              </div>
+
+              {/* Center Panel: Services Display for the Hovered Main Service */}
+              <div className="flex-1 min-w-0 flex flex-col justify-between">
+                <div>
+                  {/* Active Practice Header Bar */}
+                  <div className="flex items-start justify-between gap-4 pb-3.5 mb-3.5 border-b border-[#E8E2D4]">
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-[10px] font-mono tracking-widest uppercase text-[#B8985A] font-semibold">
+                          DIVISION 0{serviceCategories.findIndex((c) => c.id === activeCategory) + 1} OF 06
+                        </span>
+                        <span className="text-[#0B1F3A]/25">•</span>
+                        <span className="text-[10px] uppercase tracking-wider text-[#0B1F3A]/70 font-medium">
+                          {activeServicesList.length} Statutory Clearances & Practices
+                        </span>
+                      </div>
+                      <h3 className="font-cinzel text-lg xl:text-xl font-bold text-[#0B1F3A] tracking-wide">
+                        {currentCategoryData?.label}
+                      </h3>
+                      <p className="text-xs text-slate-subtle mt-0.5 max-w-xl font-light leading-relaxed">
+                        {currentCategoryData?.description}
+                      </p>
+                    </div>
+
+                    <NavAnchor
+                      href="/#consultation-desk"
+                      onClick={() => setIsMegaMenuOpen(false)}
+                      className="hidden xl:inline-flex items-center gap-1.5 text-[11px] uppercase tracking-wider font-semibold text-[#B8985A] hover:text-[#9a7e48] transition-colors group shrink-0 pt-1"
+                    >
+                      <span>Inquire Practice</span>
+                      <span className="material-symbols-outlined text-[14px] group-hover:translate-x-1 transition-transform">
+                        arrow_forward
+                      </span>
+                    </NavAnchor>
+                  </div>
+
+                  {/* Refined Services Grid (Clean 2-Column Editorial Layout) */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-2 max-h-[46vh] overflow-y-auto pr-3 pb-2 mega-menu-scroll">
+                    {activeServicesList.map((service) => (
+                      <Link
+                        key={service.slug}
+                        to={`/services/${service.slug}`}
+                        onClick={() => setIsMegaMenuOpen(false)}
+                        className="group relative flex items-start gap-2.5 p-2 rounded-[2px] bg-white/70 hover:bg-white border border-[#EDE8E0] hover:border-[#B8985A]/70 shadow-[0_1px_2px_rgba(0,0,0,0.015)] hover:shadow-md transition-all duration-200"
+                      >
+                        <span className="material-symbols-outlined text-[16px] text-[#B8985A] mt-0.5 shrink-0 group-hover:scale-110 transition-transform">
+                          {service.icon || 'check_circle'}
+                        </span>
+                        <div className="flex-1 min-w-0 pr-1">
+                          <div className="flex items-center justify-between gap-1">
+                            <h4 className="text-[12.5px] font-semibold text-[#0B1F3A] group-hover:text-[#B8985A] transition-colors truncate">
+                              {service.name}
+                            </h4>
+                            <span className="material-symbols-outlined text-[13px] text-[#0B1F3A]/20 group-hover:text-[#B8985A] group-hover:translate-x-0.5 transition-all shrink-0">
+                              chevron_right
+                            </span>
+                          </div>
+                          <p className="text-[10.5px] text-slate-subtle truncate mt-0.5 font-light leading-snug">
+                            {service.desc}
+                          </p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Micro note at bottom of services grid */}
+                <div className="pt-2.5 border-t border-[#E8E2D4] flex items-center justify-between text-[11px] text-slate-subtle">
+                  <span>Click any practice for statutory criteria, required documentation & regulatory scope.</span>
+                  <span className="font-semibold text-[#0B1F3A]">Showing {activeServicesList.length} specialized mandates</span>
+                </div>
+              </div>
+
+              {/* Right Panel: Executive Practice Spotlight Card */}
+              <div className="hidden xl:flex w-[270px] shrink-0 border-l border-[#EAE4D8] pl-6 flex-col justify-between">
+                <div className="bg-[#0B1F3A] text-white p-5 rounded-[2px] relative overflow-hidden shadow-lg border-t-2 border-[#B8985A]">
+                  {/* Subtle ambient gold glow */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#B8985A]/10 rounded-full blur-2xl pointer-events-none"></div>
+
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-1.5 text-[#B8985A] mb-2.5">
+                      <span className="material-symbols-outlined text-[17px]">verified_user</span>
+                      <span className="text-[9.5px] font-bold tracking-[0.22em] uppercase font-montserrat">
+                        Institutional Counsel
+                      </span>
+                    </div>
+
+                    <h4 className="font-cinzel text-[13.5px] text-white font-bold mb-2 leading-snug">
+                      High-Stakes Advisory & Field Liaison
+                    </h4>
+                    <p className="text-[10.5px] text-white/75 font-light leading-relaxed mb-3.5">
+                      Direct counsel led by practicing corporate advocates, senior chartered accountants, and experienced administrative liaison officers.
+                    </p>
+
+                    <div className="pt-3 border-t border-white/10 space-y-1.5 mb-4">
+                      <div className="flex items-center gap-2 text-[10.5px] text-white/80">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#B8985A]"></span>
+                        <span>Multi-Department Regulatory Clearances</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-[10.5px] text-white/80">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#B8985A]"></span>
+                        <span>Zero Procedural Opacity or Hidden Fees</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-[10.5px] text-white/80">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#B8985A]"></span>
+                        <span>Air-Gapped Archives & Enterprise NDAs</span>
+                      </div>
+                    </div>
+
+                    <NavAnchor
+                      href="/#consultation-desk"
+                      onClick={() => setIsMegaMenuOpen(false)}
+                      className="w-full inline-flex items-center justify-center gap-1.5 py-2.5 px-3 bg-[#B8985A] hover:bg-[#9a7e48] text-white text-[10.5px] uppercase tracking-wider font-semibold rounded-[2px] transition-all shadow-sm group"
+                    >
+                      <span>Book Private Consultation</span>
+                      <span className="material-symbols-outlined text-[13px] group-hover:translate-x-1 transition-transform">
+                        arrow_forward
+                      </span>
+                    </NavAnchor>
+                  </div>
+                </div>
+
+                {/* Regional Jurisdictions Footer in Spotlight */}
+                <div className="pt-3 border-t border-[#EAE4D8]">
+                  <p className="text-[9.5px] uppercase tracking-wider text-slate-subtle font-semibold mb-1">
+                    Statewide Jurisdiction Across Kerala
+                  </p>
+                  <p className="text-[11px] text-[#0B1F3A] font-medium leading-tight">
+                    All 14 Districts of Kerala • Ernakulam HQ • Statewide Field Liaison • GCC Corridor
+                  </p>
+                </div>
+              </div>
+
             </div>
 
             {/* Mega Menu Footer Strip */}
-            <div className="mt-5 pt-3.5 border-t border-[#E5E0D5] flex flex-wrap items-center justify-between gap-4 bg-[#F2EDE4]/70 -mx-6 xl:-mx-10 -mb-4 px-6 xl:px-10 py-3 rounded-b-[2px]">
-              <div className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-[#B8985A] text-[20px] shrink-0">verified</span>
-                <p className="text-xs text-[#0B1F3A]/85">
-                  Looking for multi-jurisdiction licensing or high-court representation? <span className="font-semibold text-[#0B1F3A]">50+ statutory practices handled directly.</span>
-                </p>
+            <div className="mt-4 pt-3 border-t border-[#E8E2D4] flex flex-wrap items-center justify-between gap-4 text-xs text-[#0B1F3A]/80">
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                  <span className="font-medium text-[#0B1F3A]">Direct Desk Active</span>
+                  <span className="text-slate-subtle">• Mon – Sat (9:00 AM – 6:30 PM IST)</span>
+                </div>
+                <span className="hidden sm:inline text-[#0B1F3A]/20">|</span>
+                <div className="hidden sm:flex items-center gap-1.5 text-slate-subtle">
+                  <span className="material-symbols-outlined text-[15px] text-[#B8985A]">lock</span>
+                  <span>Strict Confidentiality Guaranteed</span>
+                </div>
               </div>
-              <div className="flex items-center gap-3">
+
+              <div className="flex items-center gap-4">
                 <NavAnchor
                   href="/#consultation-desk"
                   onClick={() => setIsMegaMenuOpen(false)}
-                  className="inline-flex items-center justify-center px-4 py-1.5 border border-[#B8985A] bg-[#B8985A] text-white hover:bg-[#9a7e48] hover:border-[#9a7e48] text-[10px] xl:text-[11px] uppercase tracking-wider rounded-[2px] transition-all duration-200 font-semibold shadow-sm"
+                  className="inline-flex items-center gap-1 text-[11px] uppercase tracking-wider font-semibold text-[#B8985A] hover:text-[#9a7e48] transition-colors"
                 >
-                  Schedule Private Consultation
+                  <span>Request Urgent Statutory Filing</span>
+                  <span className="material-symbols-outlined text-[13px]">arrow_forward</span>
                 </NavAnchor>
-                <button
-                  type="button"
-                  onClick={() => setIsMegaMenuOpen(false)}
-                  className="text-xs text-slate-subtle hover:text-[#0B1F3A] px-2 py-1 transition-colors"
-                >
-                  Close [Esc]
-                </button>
               </div>
             </div>
 
@@ -387,7 +526,8 @@ export default function Navbar() {
         {/* Mega Menu Backdrop Overlay */}
         {isMegaMenuOpen && (
           <div 
-            className="hidden lg:block fixed inset-0 top-16 sm:top-20 lg:top-24 bg-[#0B1F3A]/30 backdrop-blur-[2px] z-[90] transition-opacity duration-300"
+            className="hidden lg:block fixed inset-0 top-16 sm:top-20 lg:top-24 z-[110] transition-opacity duration-300 pointer-events-auto"
+            style={{ backgroundColor: 'rgba(11, 31, 58, 0.72)', backdropFilter: 'blur(4px)' }}
             onClick={() => setIsMegaMenuOpen(false)}
           />
         )}
@@ -397,7 +537,7 @@ export default function Navbar() {
         {/* ========================================================================= */}
         <div className={`lg:hidden fixed top-0 left-0 w-full h-[100dvh] bg-[#F7F5F0] z-[105] transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col pt-16 pb-8 px-6 overflow-y-auto ${isMobileMenuOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-4 invisible pointer-events-none'}`}>
           <div className="flex justify-center mb-4">
-            <img src="/ArvistaPNGUP.png" alt="ARVISTA INTERNATIONAL" className="h-8 w-auto object-contain" />
+            <img src="/ArvistaPNGUP.png?v=3" alt="ARVISTA INTERNATIONAL" className="h-8 w-auto object-contain" />
           </div>
           
           <nav className="flex flex-col items-center justify-start flex-1 gap-5 py-4 w-full max-w-md mx-auto">
@@ -419,8 +559,9 @@ export default function Navbar() {
                     {/* Mobile Services Accordion */}
                     {isMobileServicesOpen && (
                       <div className="w-full mt-3 bg-white border border-[#E5E0D5] rounded-[3px] p-3 shadow-sm flex flex-col gap-2">
-                        <div className="text-[10px] tracking-[0.2em] uppercase font-bold text-[#B8985A] px-2 py-1 border-b border-[#E5E0D5]">
-                          Select Practice Area
+                        <div className="flex items-center justify-between text-[10px] tracking-[0.2em] uppercase font-bold text-[#B8985A] px-2 py-1.5 border-b border-[#E5E0D5]">
+                          <span>Main Services</span>
+                          <span className="text-[9px] text-[#0B1F3A]/60 font-normal">Tap to expand</span>
                         </div>
                         {serviceCategories.map((cat) => {
                           const isCatExpanded = mobileExpandedCat === cat.id;
@@ -429,15 +570,19 @@ export default function Navbar() {
                               <button
                                 type="button"
                                 onClick={() => setMobileExpandedCat(isCatExpanded ? null : cat.id)}
-                                className="w-full flex items-center justify-between py-2 px-2 text-xs font-semibold text-[#0B1F3A] hover:text-[#B8985A] transition-colors"
+                                className={`w-full flex items-center justify-between py-2 px-2 text-xs font-semibold transition-colors text-left ${
+                                  isCatExpanded ? 'text-[#B8985A] bg-[#FAF8F5]' : 'text-[#0B1F3A] hover:text-[#B8985A]'
+                                }`}
                               >
-                                <span className="flex items-center gap-2">
-                                  <span className="material-symbols-outlined text-[16px] text-[#B8985A]">
+                                <span className="flex items-center gap-2 min-w-0 pr-2">
+                                  <span className="material-symbols-outlined text-[16px] text-[#B8985A] shrink-0">
                                     {cat.icon}
                                   </span>
-                                  <span>{cat.label}</span>
+                                  <span className="truncate">{cat.label}</span>
                                 </span>
-                                <span className="text-[10px] bg-[#E5E0D5] text-[#0B1F3A] px-1.5 py-0.5 rounded-full">
+                                <span className={`text-[10px] px-1.5 py-0.5 rounded-full shrink-0 ${
+                                  isCatExpanded ? 'bg-[#0B1F3A] text-white' : 'bg-[#E5E0D5] text-[#0B1F3A]'
+                                }`}>
                                   {servicesData[cat.id]?.length}
                                 </span>
                               </button>
@@ -467,14 +612,14 @@ export default function Navbar() {
                         })}
 
                         <NavAnchor
-                          href="/#services-explorer"
+                          href="/#core-pillars"
                           onClick={() => {
                             setIsMobileMenuOpen(false);
                             setIsMobileServicesOpen(false);
                           }}
                           className="mt-2 text-center py-2 bg-[#0B1F3A] text-white text-[11px] uppercase tracking-wider font-semibold rounded-[2px]"
                         >
-                          Explore Full Grid (All 50+)
+                          Explore Strategic Pillars
                         </NavAnchor>
                       </div>
                     )}
@@ -506,10 +651,6 @@ export default function Navbar() {
             </div>
           </nav>
         </div>
-      </header>
-
-      {/* Invisible placeholder to maintain document flow */}
-      <div className="h-16 sm:h-20 lg:h-24 w-full shrink-0 bg-[#0B1F3A]"></div>
     </>
   );
 }

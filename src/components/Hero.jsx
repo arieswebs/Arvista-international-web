@@ -1,12 +1,8 @@
-import Navbar from './Navbar'
-
 export default function Hero() {
   return (
-    <section className="relative h-screen min-h-[680px] w-full bg-[#0B1F3A] text-white flex flex-col justify-between overflow-hidden">
+    <section className="relative h-screen min-h-[680px] w-full bg-[#0B1F3A] text-white flex flex-col justify-between overflow-hidden isolate pt-16 sm:pt-20 lg:pt-24">
       <div className="absolute inset-0 pointer-events-none" style={{background: 'radial-gradient(circle at 25% 45%, rgba(18, 48, 90, 0.6) 0%, rgba(11, 31, 58, 0.95) 75%, rgb(7, 19, 38) 100%), radial-gradient(circle at 85% 20%, rgba(184, 152, 90, 0.15) 0%, transparent 60%)'}}></div>
       <div className="absolute top-0 right-0 bottom-0 w-full lg:w-3/5 pointer-events-none mix-blend-luminosity bg-cover bg-center" style={{backgroundImage: 'url("/hero-legal.jpg?v=1")', opacity: 0.45, maskImage: 'linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0.85) 60%, black 100%), linear-gradient(rgba(0, 0, 0, 0.6) 0%, black 15%, black 85%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0.85) 60%, black 100%), linear-gradient(rgba(0, 0, 0, 0.6) 0%, black 15%, black 85%, transparent 100%)', maskComposite: 'source-in', WebkitMaskComposite: 'source-in'}}></div>
-      
-      <Navbar />
 
       <div className="relative z-20 flex-1 flex items-center w-full">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-12 w-full py-10 lg:py-16">
@@ -22,7 +18,7 @@ export default function Hero() {
                 <span>CONTACT US</span>
                 <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 stroke-[#0B1F3A]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" strokeLinecap="round" strokeLinejoin="round"></path></svg>
               </a>
-              <a className="inline-flex items-center justify-center text-white/80 hover:text-white underline decoration-[#B8985A] decoration-1 underline-offset-8 text-xs sm:text-sm uppercase tracking-wider font-medium transition-colors py-2 font-montserrat" href="#services-explorer">Explore our services</a>
+              <a className="inline-flex items-center justify-center text-white/80 hover:text-white underline decoration-[#B8985A] decoration-1 underline-offset-8 text-xs sm:text-sm uppercase tracking-wider font-medium transition-colors py-2 font-montserrat" href="#core-pillars">Explore our practices</a>
             </div>
           </div>
         </div>

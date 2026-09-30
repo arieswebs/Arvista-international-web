@@ -1,6 +1,7 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { getServiceBySlug, getCategoryById, servicesData } from '../data/services';
+import { getServiceSeoParagraphs, getServiceMeta } from '../data/seoContent';
 import ContactFooter from './ContactFooter';
 import Navbar from './Navbar';
 
@@ -11,7 +12,15 @@ export default function ServicePage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [slug]);
+    if (service) {
+      const meta = getServiceMeta(service);
+      document.title = meta.title;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.setAttribute('content', meta.description);
+      }
+    }
+  }, [slug, service]);
 
   if (!service) {
     return (
@@ -26,23 +35,24 @@ export default function ServicePage() {
   }
 
   const category = getCategoryById(service.categoryId);
-  const categoryServices = servicesData[service.categoryId];
+  const categoryServices = servicesData[service.categoryId] || [];
   const currentIdx = categoryServices.findIndex(s => s.slug === slug);
   const relatedServices = categoryServices.filter(s => s.slug !== slug).slice(0, 3);
+  const seoParagraphs = getServiceSeoParagraphs(service);
 
   return (
     <>
       <Navbar />
 
       {/* HERO BANNER */}
-      <section className="relative bg-[#0B1F3A] text-white py-20 sm:py-28 overflow-hidden">
+      <section className="relative bg-[#0B1F3A] text-white pt-28 sm:pt-36 pb-16 sm:pb-24 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" style={{background: 'radial-gradient(circle at 25% 45%, rgba(18, 48, 90, 0.6) 0%, rgba(11, 31, 58, 0.95) 75%, rgb(7, 19, 38) 100%), radial-gradient(circle at 85% 20%, rgba(184, 152, 90, 0.15) 0%, transparent 60%)'}}></div>
         <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-12">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-xs text-white/50 mb-6 font-montserrat">
             <Link to="/" className="hover:text-white/80 transition-colors">Home</Link>
             <span>/</span>
-            <Link to="/#services-explorer" className="hover:text-white/80 transition-colors">Services</Link>
+            <Link to="/#core-pillars" className="hover:text-white/80 transition-colors">Practices</Link>
             <span>/</span>
             <span className="text-[#B8985A]">{category?.label}</span>
           </div>
@@ -56,23 +66,75 @@ export default function ServicePage() {
         </div>
       </section>
 
-      {/* OVERVIEW */}
+      {/* OVERVIEW & LOCALIZED SEO SECTION */}
       <section className="bg-white py-16 sm:py-20">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             <div className="lg:col-span-7">
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-3">
                 <span className="w-6 h-[1px] bg-[#B8985A]"></span>
-                <span className="text-[11px] tracking-[0.28em] text-[#B8985A] uppercase font-semibold">OVERVIEW</span>
+                <span className="text-[11px] tracking-[0.28em] text-[#B8985A] uppercase font-semibold">OVERVIEW & STATUTORY PRACTICE</span>
               </div>
-              <h2 className="font-cinzel text-2xl sm:text-3xl text-[#0B1F3A] font-semibold tracking-tight mb-6">About This Service</h2>
-              <p className="text-sm sm:text-base text-slate-subtle font-light leading-relaxed">{service.overview}</p>
+              
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#B8985A]/10 border border-[#B8985A]/30 rounded-[2px] text-[11px] font-semibold text-[#8c6f37] uppercase tracking-wider mb-5 font-montserrat">
+                <span className="material-symbols-outlined text-[16px] text-[#B8985A]">location_on</span>
+                <span>Dedicated Practice for Ernakulam, Kochi & Across Kerala</span>
+              </div>
+
+              <h2 className="font-cinzel text-2xl sm:text-3xl text-[#0B1F3A] font-semibold tracking-tight mb-6 leading-snug">
+                Authoritative {service.name} in Ernakulam & Kochi
+              </h2>
+
+              {/* 3+ Highly SEO-Centric Paragraphs */}
+              <div className="space-y-4 text-sm sm:text-base text-slate-subtle font-light leading-relaxed">
+                {seoParagraphs.map((para, idx) => (
+                  <p key={idx} className="text-slate-charcoal/85">
+                    {para}
+                  </p>
+                ))}
+              </div>
+
+              {/* Local Key Corridors Strip */}
+              <div className="mt-8 pt-6 border-t border-[#EAE5DB]">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="material-symbols-outlined text-[#B8985A] text-[18px]">hub</span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#0B1F3A] font-montserrat">
+                    Key Service Corridors in Kochi & Ernakulam District
+                  </span>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {[
+                    'Kochi City',
+                    'Kakkanad (Infopark / SmartCity)',
+                    'MG Road',
+                    'Marine Drive',
+                    'Edappally',
+                    'Kalamassery Industrial Belt',
+                    'Aluva',
+                    'Panampilly Nagar',
+                    'Vyttila Mobility Hub',
+                    'Willingdon Island (Port)',
+                    'Angamaly',
+                    'Tripunithura'
+                  ].map((loc, i) => (
+                    <span 
+                      key={i} 
+                      className="text-[11px] bg-[#FAF8F5] border border-[#E7E2D8] text-[#0B1F3A]/75 px-2.5 py-1 rounded-[2px] font-montserrat"
+                    >
+                      {loc}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            {/* Key Deliverables Card */}
-            <div className="lg:col-span-5">
-              <div className="bg-[#F7F5F0] border border-[#E7E2D8] p-6 sm:p-8">
-                <h3 className="font-cinzel text-lg text-[#0B1F3A] font-semibold mb-5">Key Deliverables</h3>
+            {/* Key Deliverables & Ernakulam Statutory Channels Card */}
+            <div className="lg:col-span-5 space-y-6">
+              <div className="bg-[#F7F5F0] border border-[#E7E2D8] p-6 sm:p-8 shadow-sm">
+                <h3 className="font-cinzel text-lg text-[#0B1F3A] font-semibold mb-5 flex items-center justify-between">
+                  <span>Key Deliverables</span>
+                  <span className="text-xs font-mono text-[#B8985A] font-normal uppercase tracking-wider">Scope of Work</span>
+                </h3>
                 <ul className="space-y-3">
                   {service.keyDeliverables?.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-sm text-[#1A2230]/80">
@@ -81,6 +143,24 @@ export default function ServicePage() {
                     </li>
                   ))}
                 </ul>
+              </div>
+
+              {/* Ernakulam Statutory Liaison Card */}
+              <div className="bg-white border border-[#E5E0D5] p-6 shadow-sm rounded-[2px]">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="material-symbols-outlined text-[#B8985A] text-[20px]">account_balance</span>
+                  <h4 className="font-cinzel text-sm font-bold text-[#0B1F3A]">Ernakulam Statutory Channels</h4>
+                </div>
+                <p className="text-xs text-slate-subtle leading-relaxed mb-4 font-light">
+                  Our on-ground field officers and advocates maintain direct representation before the Ernakulam District Collectorate, Civil Station Kakkanad, Kochi Municipal Corporation, Sub-Registrar Offices, and regional state boards.
+                </p>
+                <div className="flex items-center justify-between text-[11px] text-[#0B1F3A]/75 pt-3 border-t border-[#F0ECE1] font-montserrat">
+                  <span className="flex items-center gap-1.5 text-[#0B1F3A]">
+                    <span className="material-symbols-outlined text-[15px] text-[#B8985A]">verified</span>
+                    <strong className="font-semibold">Direct On-Ground Representation</strong>
+                  </span>
+                  <span className="text-[#8c6f37] font-semibold tracking-wider uppercase text-[10px]">Ernakulam Jurisdiction</span>
+                </div>
               </div>
             </div>
           </div>

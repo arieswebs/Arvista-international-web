@@ -20,53 +20,130 @@ export default function ContactFooter() {
         <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             
-            {/* Intake Form Left Column */}
-            <div className="lg:col-span-7 bg-[#0e2442]/90 border border-white/10 p-8 sm:p-12 shadow-2xl rounded-[2px] backdrop-blur-md">
-              <div className="mb-8">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="w-6 h-[1px] bg-[#B8985A]"></span>
-                  <span className="text-[11px] tracking-[0.28em] text-[#B8985A] uppercase font-semibold">PRIORITY INTAKE</span>
+            {/* Intake Form Left Column — Simple & Ultra-Premium Executive Dossier Card */}
+            <div className="lg:col-span-7 bg-[#FCFAF6] text-[#0B1F3A] border-t-4 border-[#B8985A] border-x border-b border-[#E8E2D6] p-8 sm:p-11 shadow-[0_25px_60px_rgba(0,0,0,0.35)] rounded-[2px]">
+              <div className="mb-7">
+                <div className="flex items-center gap-2.5 mb-2">
+                  <span className="w-6 h-[1.5px] bg-[#B8985A]"></span>
+                  <span className="text-[10.5px] tracking-[0.26em] text-[#B8985A] uppercase font-bold font-montserrat">
+                    CONFIDENTIAL INTAKE
+                  </span>
                 </div>
-                <h3 className="font-cinzel text-2xl sm:text-3xl text-white font-semibold">Let’s Build Your Business the Right Way</h3>
-                <p className="text-xs sm:text-sm text-white/70 mt-2 font-light">Submit your advisory requirements to initiate confidential intake with our practice leads.</p>
+                <h3 className="font-cinzel text-2xl sm:text-3xl text-[#0B1F3A] font-bold tracking-tight">
+                  Direct Advisory Consultation
+                </h3>
+                <p className="text-xs sm:text-sm text-[#0B1F3A]/70 mt-1.5 font-light leading-relaxed">
+                  Submit your corporate requirements for direct counsel with our senior advocates, chartered accountants, and liaison leads.
+                </p>
               </div>
 
-              <form className="space-y-5" onSubmit={handleSubmit}>
-                <div>
-                  <label className="block text-[11px] uppercase tracking-[0.16em] text-[#B8985A] font-semibold mb-2" htmlFor="clientName">Full Name *</label>
-                  <input className="w-full px-4 py-3.5 bg-[#071527]/70 border border-white/15 text-white placeholder-white/40 text-sm focus:border-[#B8985A] focus:outline-none transition-colors rounded-[2px]" id="clientName" placeholder="Adv. Rajesh Menon / Director" required type="text" />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <form className="space-y-4 sm:space-y-4.5" onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-[11px] uppercase tracking-[0.16em] text-[#B8985A] font-semibold mb-2" htmlFor="clientEmail">Corporate Email *</label>
-                    <input className="w-full px-4 py-3.5 bg-[#071527]/70 border border-white/15 text-white placeholder-white/40 text-sm focus:border-[#B8985A] focus:outline-none transition-colors rounded-[2px]" id="clientEmail" placeholder="director@enterprise.com" required type="email" />
+                    <label className="block text-[10.5px] uppercase tracking-[0.16em] text-[#0B1F3A]/80 font-bold mb-1.5 font-montserrat" htmlFor="clientName">
+                      Full Name <span className="text-[#B8985A]">*</span>
+                    </label>
+                    <input 
+                      className="w-full px-4 py-3 bg-white border border-[#DDD5C7] text-[#0B1F3A] placeholder-[#0B1F3A]/35 text-[13px] focus:border-[#B8985A] focus:ring-1 focus:ring-[#B8985A] focus:outline-none transition-all rounded-[2px]" 
+                      id="clientName" 
+                      placeholder="e.g. Rajesh Menon, Director" 
+                      required 
+                      type="text" 
+                    />
                   </div>
                   <div>
-                    <label className="block text-[11px] uppercase tracking-[0.16em] text-[#B8985A] font-semibold mb-2" htmlFor="clientPhone">Phone Number *</label>
-                    <input className="w-full px-4 py-3.5 bg-[#071527]/70 border border-white/15 text-white placeholder-white/40 text-sm focus:border-[#B8985A] focus:outline-none transition-colors rounded-[2px]" id="clientPhone" placeholder="+91 98470 00000" required type="tel" />
+                    <label className="block text-[10.5px] uppercase tracking-[0.16em] text-[#0B1F3A]/80 font-bold mb-1.5 font-montserrat" htmlFor="clientPhone">
+                      Phone Number <span className="text-[#B8985A]">*</span>
+                    </label>
+                    <input 
+                      className="w-full px-4 py-3 bg-white border border-[#DDD5C7] text-[#0B1F3A] placeholder-[#0B1F3A]/35 text-[13px] focus:border-[#B8985A] focus:ring-1 focus:ring-[#B8985A] focus:outline-none transition-all rounded-[2px]" 
+                      id="clientPhone" 
+                      placeholder="+91 98470 00000" 
+                      required 
+                      type="tel" 
+                    />
                   </div>
                 </div>
-                <div>
-                  <label className="block text-[11px] uppercase tracking-[0.16em] text-[#B8985A] font-semibold mb-2" htmlFor="clientCategory">Service Discipline *</label>
-                  <select className="w-full px-4 py-3.5 bg-[#071527] border border-white/15 text-white text-sm focus:border-[#B8985A] focus:outline-none transition-colors rounded-[2px]" id="clientCategory" required defaultValue="">
-                    <option className="bg-[#071527] text-white/50" disabled value="">Select primary practice area</option>
-                    <option className="bg-[#071527] text-white" value="business">Business Consultancy & Company Incorporation</option>
-                    <option className="bg-[#071527] text-white" value="accounting">Accounting, Tax Filings & Auditing</option>
-                    <option className="bg-[#071527] text-white" value="property">Property Documentation & Title Verification</option>
-                    <option className="bg-[#071527] text-white" value="liaison">Government Liaisoning & Statutory Approvals</option>
-                  </select>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-[10.5px] uppercase tracking-[0.16em] text-[#0B1F3A]/80 font-bold mb-1.5 font-montserrat" htmlFor="clientEmail">
+                      Corporate Email <span className="text-[#B8985A]">*</span>
+                    </label>
+                    <input 
+                      className="w-full px-4 py-3 bg-white border border-[#DDD5C7] text-[#0B1F3A] placeholder-[#0B1F3A]/35 text-[13px] focus:border-[#B8985A] focus:ring-1 focus:ring-[#B8985A] focus:outline-none transition-all rounded-[2px]" 
+                      id="clientEmail" 
+                      placeholder="director@enterprise.com" 
+                      required 
+                      type="email" 
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[10.5px] uppercase tracking-[0.16em] text-[#0B1F3A]/80 font-bold mb-1.5 font-montserrat" htmlFor="clientCategory">
+                      Practice Division <span className="text-[#B8985A]">*</span>
+                    </label>
+                    <select 
+                      className="w-full px-4 py-3 bg-white border border-[#DDD5C7] text-[#0B1F3A] text-[13px] focus:border-[#B8985A] focus:ring-1 focus:ring-[#B8985A] focus:outline-none transition-all rounded-[2px] cursor-pointer" 
+                      id="clientCategory" 
+                      required 
+                      defaultValue=""
+                    >
+                      <option disabled value="">Select practice division</option>
+                      <option value="business">Business Services & Incorporation</option>
+                      <option value="hr">HR Consultancy & Talent Governance</option>
+                      <option value="project">Project Consultancy & Clearances</option>
+                      <option value="accounting">Accounting, Tax Filings & Audit</option>
+                      <option value="property">Property Documentation & Title Search</option>
+                      <option value="liaison">Government Liaison & Statutory Approvals</option>
+                    </select>
+                  </div>
                 </div>
+
                 <div>
-                  <label className="block text-[11px] uppercase tracking-[0.16em] text-[#B8985A] font-semibold mb-2" htmlFor="clientScope">Project Details / Scope Summary</label>
-                  <textarea className="w-full px-4 py-3.5 bg-[#071527]/70 border border-white/15 text-white placeholder-white/40 text-sm focus:border-[#B8985A] focus:outline-none transition-colors rounded-[2px]" id="clientScope" placeholder="Briefly outline your commercial structure, land survey numbers, or target timeline..." rows="3"></textarea>
+                  <label className="block text-[10.5px] uppercase tracking-[0.16em] text-[#0B1F3A]/80 font-bold mb-1.5 font-montserrat" htmlFor="clientScope">
+                    Requirement Summary / Scope
+                  </label>
+                  <textarea 
+                    className="w-full px-4 py-3 bg-white border border-[#DDD5C7] text-[#0B1F3A] placeholder-[#0B1F3A]/35 text-[13px] focus:border-[#B8985A] focus:ring-1 focus:ring-[#B8985A] focus:outline-none transition-all rounded-[2px] resize-none" 
+                    id="clientScope" 
+                    placeholder="Briefly outline your entity requirements, target timelines, or statutory clearances needed..." 
+                    rows="3"
+                  ></textarea>
                 </div>
-                <button className="w-full py-4 bg-[#B8985A] hover:bg-[#c9a96b] text-[#0B1F3A] text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-200 rounded-[2px] shadow-lg" type="submit">
-                  SUBMIT CONSULTATION REQUEST
+
+                <button 
+                  className="w-full py-4 bg-[#0B1F3A] hover:bg-[#132c4d] text-white border border-[#B8985A] text-xs uppercase tracking-[0.22em] font-semibold transition-all duration-300 rounded-[2px] shadow-md hover:shadow-xl flex items-center justify-center gap-2.5 group cursor-pointer font-montserrat" 
+                  type="submit"
+                >
+                  <span>Request Confidential Consultation</span>
+                  <span className="material-symbols-outlined text-[16px] text-[#B8985A] group-hover:translate-x-1 transition-transform">
+                    arrow_forward
+                  </span>
                 </button>
                 
+                {/* Micro trust indicators */}
+                <div className="pt-2 flex flex-wrap items-center justify-between gap-2 text-[10.5px] text-[#0B1F3A]/60">
+                  <span className="flex items-center gap-1">
+                    <span className="material-symbols-outlined text-[13px] text-[#B8985A]">lock</span>
+                    <span>Air-Gapped NDA Protection</span>
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <span className="material-symbols-outlined text-[13px] text-[#B8985A]">schedule</span>
+                    <span>4-Hour Business Response</span>
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <span className="material-symbols-outlined text-[13px] text-[#B8985A]">verified_user</span>
+                    <span>Direct Partner Counsel</span>
+                  </span>
+                </div>
+
                 {submitted && (
-                  <div className="p-3 bg-[#B8985A]/15 border border-[#B8985A] text-center text-xs text-[#B8985A] font-medium" id="form-confirmation">
-                    Your inquiry has been logged. An Arvista Senior Practice Lead will initiate confidential contact within 4 business hours.
+                  <div className="p-3.5 bg-emerald-50 border border-emerald-300 text-center text-xs text-emerald-900 font-medium rounded-[2px]" id="form-confirmation">
+                    <div className="flex items-center justify-center gap-2 mb-0.5">
+                      <span className="material-symbols-outlined text-emerald-700 text-base">check_circle</span>
+                      <span className="font-semibold">Consultation Request Logged</span>
+                    </div>
+                    An Arvista Senior Practice Lead will initiate confidential contact within 4 business hours.
                   </div>
                 )}
               </form>
@@ -76,7 +153,7 @@ export default function ContactFooter() {
             <div className="lg:col-span-5 flex flex-col justify-between space-y-8">
               <div>
                 <div className="mb-6">
-                  <img alt="ARVISTA International" className="h-9 w-auto object-contain brightness-0 invert opacity-95" src="/ArvistaPNGUP.png" />
+                  <img alt="ARVISTA International" className="h-9 w-auto object-contain opacity-95" src="/logo-light.png?v=3" />
                 </div>
                 <h4 className="font-cinzel text-xl text-white font-semibold mb-6">Arvista International</h4>
                 <div className="space-y-5 text-xs sm:text-sm text-white/80 font-light">
@@ -112,8 +189,8 @@ export default function ContactFooter() {
                   <div className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-[#B8985A] text-[24px]">verified</span>
                     <div>
-                      <p className="text-xs uppercase tracking-widest text-[#B8985A] font-semibold">Government Liaison Desk</p>
-                      <p className="text-xs text-white/70">Kochi & Thiruvananthapuram Secretariat Liaison</p>
+                      <p className="text-xs uppercase tracking-widest text-[#B8985A] font-semibold">Statewide Statutory Jurisdiction</p>
+                      <p className="text-xs text-white/70">Direct Field Services Across All 14 Districts of Kerala · GCC Desks</p>
                     </div>
                   </div>
                 </div>
@@ -132,7 +209,7 @@ export default function ContactFooter() {
             {/* Brand & Summary */}
             <div className="lg:col-span-4 flex flex-col gap-4">
               <Link to="/">
-                <img alt="ARVISTA International" className="h-9 w-auto object-contain brightness-0 invert opacity-95 transition-opacity hover:opacity-100" src="/ArvistaPNGUP.png" />
+                <img alt="ARVISTA International" className="h-9 w-auto object-contain opacity-95 transition-opacity hover:opacity-100" src="/logo-light.png?v=3" />
               </Link>
               <p className="text-xs sm:text-sm text-white/60 leading-relaxed font-light mt-2 max-w-sm">
                 Institutional advisory, statutory liaisoning, and corporate governance for enterprise leaders, family offices, and multinational commercial operations across India.
@@ -145,13 +222,13 @@ export default function ContactFooter() {
 
             {/* Quick Links 1 */}
             <div className="lg:col-span-2 flex flex-col gap-3">
-              <h4 className="text-xs uppercase tracking-[0.2em] text-[#B8985A] font-semibold">Corporate</h4>
+              <h4 className="text-xs uppercase tracking-[0.2em] text-[#B8985A] font-semibold">Institutional</h4>
               <ul className="space-y-2 text-xs text-white/70 font-light mt-1">
-                <li><a className="hover:text-white transition-colors" href="#why-arvista">Why Arvista</a></li>
-                <li><a className="hover:text-white transition-colors" href="#core-pillars">Our Practice</a></li>
-                <li><a className="hover:text-white transition-colors" href="#methodology">Process & Timeline</a></li>
-                <li><a className="hover:text-white transition-colors" href="#testimonials">Testimonials</a></li>
-                <li><a className="hover:text-white transition-colors" href="#faq">Frequently Asked</a></li>
+                <li><Link className="hover:text-white transition-colors" to="/about">About Arvista</Link></li>
+                <li><Link className="hover:text-white transition-colors" to="/careers">Careers & Mandates</Link></li>
+                <li><Link className="hover:text-white transition-colors" to="/blogs">Regulatory Blogs</Link></li>
+                <li><a className="hover:text-white transition-colors" href="/#core-pillars">Practice Pillars</a></li>
+                <li><a className="hover:text-white transition-colors" href="/#faq">Frequently Asked</a></li>
               </ul>
             </div>
 

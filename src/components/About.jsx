@@ -57,22 +57,26 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right Column: Architectural Photo with Overlay Card */}
+          {/* Right Column: Architectural / Advisory Photo with Overlay Card */}
           <div className="lg:col-span-6 relative">
             <div className="relative w-full aspect-[4/3] rounded-[2px] overflow-hidden border border-[#E5E0D5] shadow-2xl">
-              <img alt="ARVISTA Institutional Headquarters" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F3A]/70 via-transparent to-transparent"></div>
+              <img alt="ARVISTA Institutional Headquarters & Executive Advisory Chambers" className="w-full h-full object-cover object-center" src="/about-prestige.jpg" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F3A]/60 via-transparent to-transparent"></div>
             </div>
             
             {/* Trust Overlay Badge */}
             <div className="sm:absolute -bottom-8 -left-4 sm:left-6 mt-6 sm:mt-0 bg-[#0B1F3A] text-white p-6 border-l-4 border-[#B8985A] shadow-2xl max-w-sm">
               <div className="flex items-baseline gap-2 mb-1">
-                <span className="font-cinzel text-3xl text-[#B8985A] font-bold">1,200+</span>
-                <span className="text-xs uppercase tracking-widest text-white/70">Entities Structured</span>
+                <span className="font-cinzel text-3xl text-[#B8985A] font-bold">50+</span>
+                <span className="text-xs uppercase tracking-widest text-white/70">Entities Served</span>
               </div>
-              <p className="text-xs text-white/70 font-light leading-relaxed">
-                Maintaining a 99.4% on-schedule regulatory clearance across major industry corridors in South India.
+              <p className="text-xs text-white/70 font-light leading-relaxed mb-2">
+                Providing direct legal advisory, licensing & statutory representation across all 14 districts of Kerala.
               </p>
+              <div className="flex items-center gap-1.5 text-[10px] text-[#B8985A] font-medium uppercase tracking-wider">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                <span>All 14 Kerala Districts Actively Covered</span>
+              </div>
             </div>
           </div>
           

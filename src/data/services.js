@@ -2,10 +2,48 @@
 // Each service has a unique slug, display name, short description, full details, and metadata.
 
 export const serviceCategories = [
-  { id: 'business', label: 'Business Services', icon: 'corporate_fare' },
-  { id: 'accounting', label: 'Accounting Services', icon: 'account_balance' },
-  { id: 'property', label: 'Property & Documentation', icon: 'real_estate_agent' },
-  { id: 'liaison', label: 'Liaisoning Services', icon: 'handshake' }
+  { 
+    id: 'business', 
+    label: 'Business Services', 
+    icon: 'corporate_fare',
+    tagline: 'Formation, Licensing & IP Protection',
+    description: 'Statutory entity formation, industrial trade licensing, regulatory clearances, and commercial documentation.'
+  },
+  { 
+    id: 'hr', 
+    label: 'HR Consultancy', 
+    icon: 'groups_3',
+    tagline: 'Staffing, Labor Law & Talent Governance',
+    description: 'Statutory labor registrations, PF/ESI compliance, executive employment agreements, POSH protocols, and labor audits.'
+  },
+  { 
+    id: 'project', 
+    label: 'Project Consultancy', 
+    icon: 'domain_verification',
+    tagline: 'Feasibility, Clearances & Infrastructure',
+    description: 'Bankable DPRs, PCB clearances (CTE/CTO), industrial zoning conversions, asset valuation, and Single Window sanctions.'
+  },
+  { 
+    id: 'accounting', 
+    label: 'Accounting Services', 
+    icon: 'account_balance',
+    tagline: 'Taxation, Audits & Statutory Filings',
+    description: 'Comprehensive GST compliance, direct taxes, institutional audit, financial reporting, and ROC secretarial filings.'
+  },
+  { 
+    id: 'property', 
+    label: 'Property & Documentation', 
+    icon: 'real_estate_agent',
+    tagline: 'Title Search, Conveyance & Mutation',
+    description: '30+ year high-court title searches, registered sale deeds, lease covenants, land conversions, and government valuations.'
+  },
+  { 
+    id: 'liaison', 
+    label: 'Liaisoning Services', 
+    icon: 'handshake',
+    tagline: 'Government Approvals, NOCs & Consular',
+    description: 'Direct representation before municipal corporations, RTO, MEA consular offices, railways, and quasi-judicial tribunals.'
+  }
 ];
 
 export const servicesData = {
@@ -38,8 +76,6 @@ export const servicesData = {
         { q: 'Do I need a separate PAN for my proprietorship?', a: 'No. The proprietor\'s personal PAN serves as the business PAN. A separate TAN may be required if you deduct TDS.' },
         { q: 'Can a Sole Proprietorship be converted to an LLP or Pvt Ltd later?', a: 'Yes. ARVISTA assists with seamless entity migration, including asset transfer, GST migration, and re-registration of licenses.' }
       ],
-      timeline: '3–7 working days',
-      startingPrice: '₹2,999'
     },
     {
       slug: 'partnership-firm-llp',
@@ -69,8 +105,6 @@ export const servicesData = {
         { q: 'How many partners are needed for an LLP?', a: 'Minimum 2 Designated Partners are required. There is no maximum limit for total partners.' },
         { q: 'Is LLP annual compliance mandatory even if there is no revenue?', a: 'Yes. Annual Return (Form 11) and Statement of Account (Form 8) must be filed with MCA every year, regardless of turnover.' }
       ],
-      timeline: '7–15 working days',
-      startingPrice: '₹5,999'
     },
     {
       slug: 'company-formation',
@@ -100,8 +134,6 @@ export const servicesData = {
         { q: 'How many directors and shareholders are needed?', a: 'Minimum 2 directors (at least 1 must be Indian resident) and 2 shareholders for a Private Limited Company.' },
         { q: 'What is SPICe+?', a: 'SPICe+ (Simplified Proforma for Incorporating Company Electronically Plus) is MCA\'s integrated web form that combines incorporation, DIN, PAN, TAN, EPFO, ESIC, GST, and bank account opening in one filing.' }
       ],
-      timeline: '7–12 working days',
-      startingPrice: '₹7,999'
     },
     {
       slug: 'one-person-company',
@@ -131,8 +163,6 @@ export const servicesData = {
         { q: 'What happens if OPC turnover exceeds ₹2 crore?', a: 'The OPC must mandatorily convert to a Private Limited Company within 6 months of exceeding the threshold.' },
         { q: 'Can an OPC have employees?', a: 'Absolutely. An OPC can hire unlimited employees and operate like any other company.' }
       ],
-      timeline: '7–10 working days',
-      startingPrice: '₹6,999'
     },
     {
       slug: 'society-trust-registration',
@@ -161,8 +191,6 @@ export const servicesData = {
         { q: 'What is the difference between 12A and 80G?', a: '12A exempts the trust/society from paying income tax on its income. 80G allows donors to claim a deduction on their taxable income for donations made to the entity.' },
         { q: 'Can a trust engage in commercial activities?', a: 'A charitable trust can undertake incidental commercial activities as long as the profits are applied towards its charitable objects.' }
       ],
-      timeline: '15–30 working days',
-      startingPrice: '₹8,999'
     },
     {
       slug: 'udyam-msme-registration',
@@ -191,8 +219,6 @@ export const servicesData = {
         { q: 'Is there any fee for UDYAM registration?', a: 'The government portal charges no fee. ARVISTA charges a nominal professional fee for end-to-end filing and advisory.' },
         { q: 'Can a Private Limited Company register under UDYAM?', a: 'Yes. Any entity — proprietorship, partnership, LLP, Pvt Ltd, or even cooperative — can register if it meets the investment and turnover criteria.' }
       ],
-      timeline: '1–3 working days',
-      startingPrice: '₹999'
     },
     {
       slug: 'trade-business-licence',
@@ -221,8 +247,6 @@ export const servicesData = {
         { q: 'What is the validity of a Trade License?', a: 'Typically 1 year, renewable annually. Some municipalities issue licenses for up to 5 years.' },
         { q: 'Can ARVISTA handle licenses in multiple cities?', a: 'Yes. We have field presence across Kerala and pan-India liaison capability for multi-location businesses.' }
       ],
-      timeline: '7–15 working days',
-      startingPrice: '₹3,999'
     },
     {
       slug: 'fssai-licence',
@@ -251,8 +275,6 @@ export const servicesData = {
         { q: 'What is the penalty for operating without FSSAI?', a: 'Fines up to ₹5 lakh and imprisonment up to 6 months under the Food Safety and Standards Act, 2006.' },
         { q: 'How long is the FSSAI license valid?', a: 'You can choose validity from 1 to 5 years at the time of application. Renewal must be filed 30 days before expiry.' }
       ],
-      timeline: '7–30 working days',
-      startingPrice: '₹2,999'
     },
     {
       slug: 'drug-licences',
@@ -281,8 +303,6 @@ export const servicesData = {
         { q: 'What is the difference between Form 20 and Form 21?', a: 'Form 20 covers drugs listed in Schedule C, C1, and X. Form 21 covers drugs not listed in these schedules. Most pharmacies need both.' },
         { q: 'Can ARVISTA help with Ayurvedic drug licenses?', a: 'Yes. We handle Ayurvedic, Siddha, Unani, and Homeopathic drug manufacturing and sale licenses as well.' }
       ],
-      timeline: '15–45 working days',
-      startingPrice: '₹9,999'
     },
     {
       slug: 'digital-signature-din',
@@ -311,8 +331,6 @@ export const servicesData = {
         { q: 'How long does it take to get a DSC?', a: 'Express processing takes 1–2 working days. Standard processing takes 3–5 working days.' },
         { q: 'Is annual DIN KYC mandatory?', a: 'Yes. Every director must file DIR-3 KYC annually before September 30 to keep their DIN active. Failure attracts a ₹5,000 penalty.' }
       ],
-      timeline: '1–5 working days',
-      startingPrice: '₹1,499'
     },
     {
       slug: 'import-export-code',
@@ -341,38 +359,6 @@ export const servicesData = {
         { q: 'Does IEC have a validity period?', a: 'IEC is valid for lifetime but must be updated annually on the DGFT portal (July–September window).' },
         { q: 'Can a proprietorship get an IEC?', a: 'Yes. Any entity — proprietorship, partnership, LLP, company — can obtain an IEC.' }
       ],
-      timeline: '3–7 working days',
-      startingPrice: '₹2,999'
-    },
-    {
-      slug: 'labour-registration',
-      name: 'Labour Registration',
-      desc: 'Shop & Commercial Establishment Act compliance and registrations.',
-      icon: 'engineering',
-      heroSubtitle: 'LABOUR COMPLIANCE',
-      tagline: 'Statutory employment compliance for every commercial establishment.',
-      overview: 'Every business employing workers must register under the Shops & Commercial Establishments Act of the respective state. ARVISTA handles registrations under the Shop & Establishment Act, Contract Labour Act, Inter-State Migrant Workers Act, and other applicable labour legislations, ensuring full statutory compliance and protection from penalties.',
-      keyDeliverables: [
-        'Shop & Establishment registration',
-        'Contract Labour license (CLRA) where applicable',
-        'Labour Welfare Fund registration',
-        'Professional Tax employer registration',
-        'Employment exchange notification compliance',
-        'Compliance display board and register maintenance'
-      ],
-      process: [
-        { step: 'Applicability Assessment', detail: 'Determine which labour laws apply based on employee count, business type, and state jurisdiction.' },
-        { step: 'Documentation', detail: 'Prepare employer details, employee records, premises documents, and undertakings.' },
-        { step: 'Filing', detail: 'Submit applications to the Labour Department and relevant statutory authorities.' },
-        { step: 'Compliance Setup', detail: 'Set up required registers, display boards, and establish ongoing compliance procedures.' }
-      ],
-      faqs: [
-        { q: 'When must I register under the Shop & Establishment Act?', a: 'Within 30 days of commencing business. Penalties apply for late registration.' },
-        { q: 'Is this different from PF and ESI registration?', a: 'Yes. Shop & Establishment registration is a state-level labour compliance. PF (EPFO) and ESI (ESIC) are separate central government social security registrations.' },
-        { q: 'What records must an employer maintain?', a: 'Attendance register, wage register, leave register, overtime register, and annual return filings among others.' }
-      ],
-      timeline: '5–10 working days',
-      startingPrice: '₹2,499'
     },
     {
       slug: 'trademark-registration',
@@ -402,8 +388,6 @@ export const servicesData = {
         { q: 'Can I register a logo and name together?', a: 'Yes. You can file as a word mark (name only), device mark (logo only), or composite mark (name + logo combined).' },
         { q: 'Is trademark registration valid across India?', a: 'Yes. Once registered, a trademark is protected throughout India. For international protection, we assist with Madrid Protocol filings.' }
       ],
-      timeline: '12–18 months (filing in 2–3 days)',
-      startingPrice: '₹5,999'
     },
     {
       slug: 'mou-letter-of-undertaking',
@@ -432,69 +416,6 @@ export const servicesData = {
         { q: 'Do MOUs need stamp duty?', a: 'If the MOU contains financial obligations or commitments, it typically requires stamp duty as per state-specific Stamp Act schedules.' },
         { q: 'Can ARVISTA draft MOUs for international parties?', a: 'Yes. We draft cross-border MOUs with appropriate governing law, jurisdiction, and dispute resolution (arbitration) clauses.' }
       ],
-      timeline: '3–7 working days',
-      startingPrice: '₹4,999'
-    },
-    {
-      slug: 'project-report',
-      name: 'Techno-Economic Project Report',
-      desc: 'Comprehensive DPR for bank capital sanction and industrial subsidy.',
-      icon: 'analytics',
-      heroSubtitle: 'PROJECT FINANCING',
-      tagline: 'Bank-ready project reports for capital sanction and industrial subsidy.',
-      overview: 'A Techno-Economic Viability (TEV) Report or Detailed Project Report (DPR) is essential for bank loan sanction, government subsidy applications, and investor due diligence. ARVISTA prepares comprehensive reports including market analysis, technical feasibility, financial projections, cost estimates, and break-even analysis, formatted to meet the specific requirements of nationalised banks, NBFCs, and MSME subsidy authorities.',
-      keyDeliverables: [
-        'Detailed Project Report (DPR) with financial projections',
-        'Market analysis and demand assessment',
-        'Technical feasibility and production capacity planning',
-        'Capital cost and working capital estimation',
-        'Break-even and profitability analysis (5-year projection)',
-        'CMA data preparation for bank loan applications',
-        'MSME subsidy scheme eligibility reports'
-      ],
-      process: [
-        { step: 'Project Scoping', detail: 'Understand your business plan, scale, location, and financing requirements in detail.' },
-        { step: 'Research & Analysis', detail: 'Conduct market research, industry benchmarking, and technical feasibility assessment.' },
-        { step: 'Report Preparation', detail: 'Draft comprehensive DPR with financial models, projections, and sensitivity analysis.' },
-        { step: 'Bank Submission', detail: 'Format report per specific bank requirements and assist with loan application documentation.' }
-      ],
-      faqs: [
-        { q: 'Which banks accept ARVISTA project reports?', a: 'Our reports are accepted by all nationalised banks (SBI, PNB, Canara, Indian Bank etc.), major private banks, and NBFCs. We format per each institution\'s specific template.' },
-        { q: 'How detailed are the financial projections?', a: 'We provide 5-year projections including P&L, balance sheet, cash flow, break-even analysis, DSCR, and sensitivity analysis.' },
-        { q: 'Can you prepare reports for government subsidy schemes?', a: 'Yes. We prepare reports specifically for PMEGP, CGTMSE, KSFC, and state-specific MSME subsidy applications.' }
-      ],
-      timeline: '10–20 working days',
-      startingPrice: '₹14,999'
-    },
-    {
-      slug: 'pollution-control-clearance',
-      name: 'Pollution Control Board Clearance',
-      desc: 'State PCB Consent to Establish (CTE) & Consent to Operate (CTO).',
-      icon: 'eco',
-      heroSubtitle: 'ENVIRONMENTAL COMPLIANCE',
-      tagline: 'State PCB consents for industrial and commercial operations.',
-      overview: 'Any industry or commercial operation generating emissions, effluents, or waste requires Consent to Establish (CTE) and Consent to Operate (CTO) from the State Pollution Control Board. ARVISTA handles the complete application process including environmental impact assessment coordination, effluent treatment plan preparation, and ongoing compliance management.',
-      keyDeliverables: [
-        'Consent to Establish (CTE) application',
-        'Consent to Operate (CTO) application',
-        'Environmental compliance report preparation',
-        'Effluent Treatment Plan (ETP) documentation',
-        'Hazardous waste management authorization',
-        'Annual PCB returns and renewal management'
-      ],
-      process: [
-        { step: 'Industry Classification', detail: 'Determine Red/Orange/Green/White category classification for your industry type.' },
-        { step: 'Documentation', detail: 'Prepare process flow diagrams, pollution load estimates, and mitigation plans.' },
-        { step: 'PCB Filing', detail: 'Submit application on the State PCB portal with all technical documentation.' },
-        { step: 'Inspection & Consent', detail: 'Coordinate PCB officer inspection, address observations, and obtain consent order.' }
-      ],
-      faqs: [
-        { q: 'Do all businesses need PCB consent?', a: 'Not all. White category industries (non-polluting) like IT offices are exempt. Most manufacturing, food processing, and construction activities require consent.' },
-        { q: 'What is the difference between CTE and CTO?', a: 'CTE (Consent to Establish) is obtained before construction/setup. CTO (Consent to Operate) is obtained after setup and before commencing operations.' },
-        { q: 'What are the penalties for operating without PCB consent?', a: 'Imprisonment up to 6 years and/or fine up to ₹1 lakh per day of non-compliance under the Environment Protection Act.' }
-      ],
-      timeline: '30–60 working days',
-      startingPrice: '₹12,999'
     },
     {
       slug: 'paramedical-clinical-registration',
@@ -523,8 +444,6 @@ export const servicesData = {
         { q: 'Can unqualified persons run a clinical establishment?', a: 'No. The Act mandates that only qualified and registered medical practitioners can own and operate clinical establishments.' },
         { q: 'Is biomedical waste management mandatory?', a: 'Yes. All clinical establishments must have a valid agreement with an authorized biomedical waste management facility.' }
       ],
-      timeline: '15–30 working days',
-      startingPrice: '₹7,999'
     },
     {
       slug: 'hospital-registration',
@@ -554,8 +473,6 @@ export const servicesData = {
         { q: 'Can ARVISTA help with NABH accreditation?', a: 'We provide pre-accreditation advisory and documentation support. The NABH accreditation process itself is conducted by NABH assessors.' },
         { q: 'What about radiology and nuclear medicine licenses?', a: 'We handle AERB (Atomic Energy Regulatory Board) applications for X-ray, CT, MRI, and nuclear medicine equipment licensing.' }
       ],
-      timeline: '60–120 working days',
-      startingPrice: '₹49,999'
     },
     {
       slug: 'nda-agreements',
@@ -584,8 +501,6 @@ export const servicesData = {
         { q: 'Do NDAs need stamp duty?', a: 'NDAs creating financial obligations may require stamp duty depending on state laws. We advise on applicability.' },
         { q: 'What is a typical NDA term?', a: 'Most commercial NDAs run for 2–5 years, with certain obligations (trade secrets) surviving perpetually.' }
       ],
-      timeline: '1–3 working days',
-      startingPrice: '₹2,999'
     },
     {
       slug: 'business-agreements-takeover',
@@ -615,8 +530,6 @@ export const servicesData = {
         { q: 'Is due diligence mandatory?', a: 'While not legally mandatory, due diligence is strongly recommended to uncover hidden liabilities, regulatory non-compliances, and litigation risks.' },
         { q: 'Can ARVISTA handle cross-border acquisitions?', a: 'We handle the Indian regulatory side of cross-border transactions including FEMA compliance, RBI filings, and SEBI requirements.' }
       ],
-      timeline: '15–45 working days',
-      startingPrice: '₹24,999'
     },
     {
       slug: 'pr-compliance-management',
@@ -646,10 +559,613 @@ export const servicesData = {
         { q: 'How does ARVISTA track compliance deadlines?', a: 'We use proprietary compliance management software with automated reminders and a dedicated relationship manager for each client.' },
         { q: 'Can this service be customised for specific compliance areas?', a: 'Absolutely. We offer modular compliance packages — you can choose MCA-only, GST-only, or full-spectrum compliance management.' }
       ],
-      timeline: 'Ongoing annual retainer',
-      startingPrice: '₹19,999/year'
     }
   ],
+    hr: [
+    {
+        "slug": "labour-registration",
+        "name": "Labour Registration & Licensing",
+        "desc": "Shop & Commercial Establishment Act, CLRA licensing & statutory labour compliance.",
+        "icon": "badge",
+        "heroSubtitle": "LABOUR LAW & STATUTORY COMPLIANCE",
+        "tagline": "End-to-end statutory workforce compliance, registrations, and government labour licensing.",
+        "overview": "Every commercial establishment, industrial factory, and service business employing personnel in India must comply with state and central labour legislation. ARVISTA manages registrations and licensing under the Kerala Shops & Commercial Establishments Act, Contract Labour (Regulation and Abolition) Act (CLRA), Inter-State Migrant Workers Act, and the new Occupational Safety, Health and Working Conditions Code. We protect corporate founders and directors from punitive inspections while instituting fair, legally audited operational frameworks for your workforce.",
+        "keyDeliverables": [
+            "Shop & Commercial Establishment Act registration and annual renewals",
+            "Contract Labour (CLRA) registration for Principal Employers and Contractors",
+            "Factory License procurement and factory plan engineering approvals",
+            "Labour Welfare Fund (LWF) establishment registration and compliance",
+            "Statutory physical and digital registers setup (Muster Roll, Wage Register, Overtime)",
+            "Representation before jurisdictional Labour Officers during inspections and summons",
+            "Professional Tax employer registration and local body filing"
+        ],
+        "process": [
+            {
+                "step": "Workforce Audit",
+                "detail": "Evaluate employee headcount, commercial premises classification, and third-party contractor contracts against applicable state acts."
+            },
+            {
+                "step": "Documentation Assembly",
+                "detail": "Prepare rent agreements, utility records, director identity verifications, muster rolls, and statutory undertakings."
+            },
+            {
+                "step": "Departmental Filing",
+                "detail": "Submit electronic applications with state Labour Department portals and coordinate with local labour commissioners."
+            },
+            {
+                "step": "Licensing & Compliance Delivery",
+                "detail": "Deliver certified registration certificates and set up permanent statutory compliance calendars and notice boards."
+            }
+        ],
+        "faqs": [
+            {
+                "q": "When is a Shop & Commercial Establishment registration required?",
+                "a": "Under statutory state laws, registration is mandatory within 30 days of commencing commercial operations, regardless of whether your business operates from an office or in a hybrid format."
+            },
+            {
+                "q": "When does the Contract Labour (CLRA) Act apply?",
+                "a": "CLRA applies to any establishment that employs 20 or more contract workmen on any day of the accounting year. The principal employer must obtain a Registration Certificate, and contractors must obtain licenses."
+            },
+            {
+                "q": "What are the penalties for non-compliance with labour laws?",
+                "a": "Failure to register or maintain statutory registers carries substantial monetary penalties, cessation of commercial operations, and potential criminal liability for designated directors."
+            }
+        ],
+    },
+    {
+        "slug": "pf-esi-registration",
+        "name": "EPF & ESIC Registration & Returns",
+        "desc": "Employee social security registration, monthly ECR challan filings & compliance audits.",
+        "icon": "health_and_safety",
+        "heroSubtitle": "SOCIAL SECURITY GOVERNANCE",
+        "tagline": "Employee social security compliance — EPFO, ESIC, monthly filings, and payroll governance.",
+        "overview": "Establishments employing 20 or more persons must register under the Employees' Provident Fund Organisation (EPFO). Commercial and industrial units employing 10 or more persons with monthly wages up to ₹21,000 must register under the Employees' State Insurance Corporation (ESIC). ARVISTA manages complete setup on the unified Shram Suvidha portal, digital UAN activation, monthly contribution computations, ECR challan generation, and inspectoral grievance defense.",
+        "keyDeliverables": [
+            "EPFO employer registration and establishment code allotment",
+            "ESIC employer registration and branch unit mapping",
+            "Universal Account Number (UAN) generation and Aadhaar/Bank digital KYC",
+            "Monthly PF & ESIC contribution computation and ECR challan filing",
+            "ESIC monthly payment challans and half-yearly Return of Contributions",
+            "PF annual returns, transfer assistance, and grievance redressal on EPFiGMS",
+            "Direct representation during EPFO/ESIC inspectoral audits and Section 7A inquiries"
+        ],
+        "process": [
+            {
+                "step": "Establishment Onboarding",
+                "detail": "Register establishment on unified Shram Suvidha and EPFO/ESIC portals using director DSC."
+            },
+            {
+                "step": "Employee KYC Seeding",
+                "detail": "Generate UANs, seed Aadhaar, bank details, and PAN for all eligible employees on the employer portal."
+            },
+            {
+                "step": "Monthly Challan Filing",
+                "detail": "Compute wage deductions, generate Electronic Challan cum Return (ECR), and ensure timely deposit before the 15th."
+            },
+            {
+                "step": "Annual Audits & Reconciliations",
+                "detail": "File annual returns and maintain digital registers for inspectoral defense."
+            }
+        ],
+        "faqs": [
+            {
+                "q": "Is EPF registration mandatory for companies with fewer than 20 employees?",
+                "a": "It is not mandatory, but voluntary registration is permitted and widely adopted by growing companies to attract top talent and provide statutory retirement benefits."
+            },
+            {
+                "q": "What is the current EPF contribution breakdown?",
+                "a": "Employer contributes 12% (3.67% to EPF + 8.33% to EPS) and employee contributes 12% of basic wages plus dearness allowance."
+            },
+            {
+                "q": "What is the consequence of late PF/ESI payment?",
+                "a": "Late payment attracts statutory damages ranging from 5% to 25% under Section 14B, plus penal interest at 12% per annum under Section 7Q of the EPF Act."
+            }
+        ],
+    },
+    {
+        "slug": "executive-contracts-nda",
+        "name": "Executive Contracts & NDAs",
+        "desc": "Watertight C-suite employment agreements, restrictive covenants, IP assignment & NDAs.",
+        "icon": "history_edu",
+        "heroSubtitle": "TALENT CONTRACTS & IP RETENTION",
+        "tagline": "Watertight legal protection for executive hiring, intellectual property retention, and trade secrets.",
+        "overview": "Hiring key executives and technical leaders requires bespoke contractual governance that goes far beyond generic offer letters. ARVISTA drafts robust, enforceable employment contracts containing critical restrictive covenants, trade secret confidentiality, intellectual property assignment, non-solicitation, and structured severance frameworks tailored to protect shareholder value and proprietary enterprise know-how.",
+        "keyDeliverables": [
+            "C-suite and senior leadership employment contract drafting",
+            "Comprehensive Non-Disclosure Agreements (NDA) and trade secret covenants",
+            "Intellectual Property (IP) assignment and Work-for-Hire provisions",
+            "Non-solicitation covenants covering clients, suppliers, and key employees",
+            "Executive performance clawback provisions and structured severance agreements",
+            "Dual-employment, moonlighting prevention, and conflict of interest policies",
+            "Director service agreements and board representation covenants"
+        ],
+        "process": [
+            {
+                "step": "Role & Risk Diagnostic",
+                "detail": "Assess executive access to trade secrets, client lists, IP assets, and competitive market risks."
+            },
+            {
+                "step": "Contractual Drafting",
+                "detail": "Corporate advocates craft tailored employment agreements embedding watertight IP assignment and restrictive terms."
+            },
+            {
+                "step": "Review & Closing",
+                "detail": "Align with corporate HR and the executive candidate to ensure fair, clear, and enforceable execution."
+            },
+            {
+                "step": "Execution & Archival",
+                "detail": "Formal digital/physical execution with proper stamp duty compliance and secure digital vaulting."
+            }
+        ],
+        "faqs": [
+            {
+                "q": "Are non-compete clauses legally enforceable in India?",
+                "a": "Section 27 of the Indian Contract Act voids post-termination non-competes. However, confidentiality, during-employment exclusivity, and client/employee non-solicitation covenants are fully upheld by Indian courts."
+            },
+            {
+                "q": "Why is an explicit IP Assignment clause critical?",
+                "a": "Under Indian copyright and patent law, without an explicit written assignment clause specifying transfer of rights, IP created by employees or consultants can remain contested."
+            },
+            {
+                "q": "Can ARVISTA customize contracts for cross-border executive appointments?",
+                "a": "Yes. We draft dual-jurisdiction contracts addressing foreign currency compensation, tax residency, and cross-border arbitration venues."
+            }
+        ],
+    },
+    {
+        "slug": "posh-compliance-policy",
+        "name": "POSH Policy & IC Committee Setup",
+        "desc": "Prevention of Sexual Harassment compliance, Internal Committee constitution & annual filing.",
+        "icon": "shield_person",
+        "heroSubtitle": "WORKPLACE SAFETY & GOVERNANCE",
+        "tagline": "Mandatory POSH compliance, Internal Committee constitution, and statutory district filings.",
+        "overview": "Under the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013 (POSH), every employer with 10 or more employees must formulate a gender-neutral POSH policy, constitute an Internal Committee (IC) led by a senior woman and an empaneled external legal expert, conduct periodic employee sensitization, and file annual compliance reports with the District Officer.",
+        "keyDeliverables": [
+            "Bespoke corporate POSH policy drafting and digital dissemination",
+            "Internal Committee (IC) formal constitution order and tenure appointment letters",
+            "Empaneled External Presiding / Legal Member representation for your committee",
+            "Employee sensitization sessions and interactive IC training modules",
+            "Quasi-judicial inquiry procedural handbook and case-handling documentation",
+            "Annual POSH compliance report drafting and statutory submission to the District Officer",
+            "Workplace safety audit and statutory display notice compliance"
+        ],
+        "process": [
+            {
+                "step": "Policy Formulation",
+                "detail": "Draft customized POSH policy aligned with your enterprise culture, remote operations, and statutory regulations."
+            },
+            {
+                "step": "Committee Constitution",
+                "detail": "Appoint internal employee members and assign a certified ARVISTA external advocate to the committee."
+            },
+            {
+                "step": "Workforce Sensitization",
+                "detail": "Deliver live or virtual interactive workshops for employees and managers on respectful workplace conduct."
+            },
+            {
+                "step": "Statutory Reporting",
+                "detail": "Consolidate annual complaint statistics and submit the mandatory return to the District Collectorate before December 31."
+            }
+        ],
+        "faqs": [
+            {
+                "q": "Is POSH compliance mandatory for remote or IT companies?",
+                "a": "Yes. The definition of 'workplace' under the POSH Act extends to virtual workspaces, remote work channels, official travel, and digital communication platforms."
+            },
+            {
+                "q": "Who qualifies as an External Member on the Internal Committee?",
+                "a": "A person associated with NGOs or associations committed to women's causes, or an advocate familiar with sexual harassment and labor jurisprudence. ARVISTA provides qualified empaneled experts."
+            },
+            {
+                "q": "What is the penalty for failing to constitute an Internal Committee?",
+                "a": "A direct monetary fine of ₹50,000 for the first offense, double the fine for subsequent non-compliance, and potential revocation of your municipal commercial trade licenses."
+            }
+        ],
+    },
+    {
+        "slug": "hr-handbook-policy-design",
+        "name": "HR Manuals & Workplace Policies",
+        "desc": "Standing orders, code of conduct, leave governance, remote protocols & disciplinary rules.",
+        "icon": "menu_book",
+        "heroSubtitle": "ORGANISATIONAL INFRASTRUCTURE",
+        "tagline": "Institutional HR frameworks, employee handbooks, and operational conduct manuals.",
+        "overview": "A growing enterprise requires clear, systematic operational rules to prevent employee disputes and maintain institutional rigor. ARVISTA designs comprehensive Employee Handbooks, Industrial Standing Orders, code of conduct guidelines, leave policies, and disciplinary protocols. We transform ad-hoc startup practices into mature, audited corporate operations.",
+        "keyDeliverables": [
+            "Comprehensive Employee Handbook tailored to your industry scale",
+            "Certified Industrial Standing Orders preparation and certification (for factories/units)",
+            "Leave, attendance, overtime, and hybrid/remote work operational protocols",
+            "Corporate Code of Conduct, Ethics, Anti-Bribery, and Whistleblower policy",
+            "Performance Improvement Plan (PIP) framework and disciplinary guidelines",
+            "Separation, exit interview, asset clearance, and full-and-final settlement protocols",
+            "Data privacy and company IT asset acceptable use agreements"
+        ],
+        "process": [
+            {
+                "step": "Operational Discovery",
+                "detail": "Review existing work timings, shift rosters, compensation structures, and management pain points."
+            },
+            {
+                "step": "Policy Formulation",
+                "detail": "Draft clear, comprehensive policies aligning organizational goals with state and central labor enactments."
+            },
+            {
+                "step": "Executive Alignment",
+                "detail": "Review drafts with management and HR leadership to refine operational workflows."
+            },
+            {
+                "step": "Rollout & Sign-off",
+                "detail": "Deploy digital handbook, obtain employee digital acknowledgments, and conduct manager briefing sessions."
+            }
+        ],
+        "faqs": [
+            {
+                "q": "When are Certified Standing Orders mandatory?",
+                "a": "Industrial establishments employing 100 or more workmen (reduced to 50 in certain states) must obtain certified standing orders under the Industrial Employment (Standing Orders) Act."
+            },
+            {
+                "q": "Can policies be updated for hybrid or work-from-home teams?",
+                "a": "Yes. We incorporate dedicated provisions for tracking productivity, home-office cybersecurity, confidential data protection, and equipment stewardship."
+            },
+            {
+                "q": "How do structured HR policies protect employers during labor disputes?",
+                "a": "Documented codes of conduct and transparent disciplinary procedures provide decisive legal proof during wrongful termination claims or conciliation proceedings."
+            }
+        ],
+    },
+    {
+        "slug": "statutory-labor-audit",
+        "name": "Statutory Labour & Payroll Audit",
+        "desc": "Wage code audit, minimum wages, bonus, gratuity & statutory register scrutinies.",
+        "icon": "rule",
+        "heroSubtitle": "LABOUR RISK & DUE DILIGENCE",
+        "tagline": "Exhaustive employer compliance audits to pre-empt penalties and labour inspections.",
+        "overview": "A proactive labour audit by ARVISTA reviews your payroll calculations, contractor agreements, overtime registers, bonus payments, and gratuity provisioning against prevailing state and central labour legislations. We produce a comprehensive, prioritised risk matrix that eliminates latent liabilities before government labour enforcement officers initiate inspections.",
+        "keyDeliverables": [
+            "Comprehensive audit of minimum wages and wage code compliance",
+            "Payment of Bonus Act, Payment of Gratuity Act, and maternity benefit liability scrutiny",
+            "Contract labour vendor compliance review and indemnity verification",
+            "Physical and digital statutory register verification (Forms A through E)",
+            "Overtime calculation accuracy and statutory working hour compliance review",
+            "Executive Labour Audit Report with traffic-light risk prioritization",
+            "Corrective action roadmap and advisory support during labour officer summons"
+        ],
+        "process": [
+            {
+                "step": "Data Collection",
+                "detail": "Securely compile payroll sheets, contractor service agreements, muster rolls, and challans."
+            },
+            {
+                "step": "Statutory Verification",
+                "detail": "Senior labour advocates audit records against minimum wage notifications, social security caps, and state rules."
+            },
+            {
+                "step": "Audit Report Issuance",
+                "detail": "Present detailed audit report identifying financial exposures, non-compliances, and risk ratings."
+            },
+            {
+                "step": "Remediation",
+                "detail": "Assist in drafting missing registers, revising contract clauses, and updating payroll structures."
+            }
+        ],
+        "faqs": [
+            {
+                "q": "Who performs the labour audit at ARVISTA?",
+                "a": "Audits are performed by senior practicing labour advocates, certified payroll consultants, and former administrative labour enforcement officers."
+            },
+            {
+                "q": "Why is contractor compliance audit essential for principal employers?",
+                "a": "Under Indian law, if a security, housekeeping, or staffing agency fails to pay minimum wages or deposit PF/ESI, the principal employer is legally liable for all dues and damages."
+            },
+            {
+                "q": "How often should a company conduct a labour compliance audit?",
+                "a": "We recommend an annual audit or an immediate audit prior to private equity funding, mergers, or initial public offerings."
+            }
+        ],
+    }
+],
+  project: [
+    {
+        "slug": "project-report",
+        "name": "Techno-Economic Project Report (DPR)",
+        "desc": "Comprehensive DPR for bank capital sanction, syndicate finance & MSME industrial subsidy.",
+        "icon": "analytics",
+        "heroSubtitle": "BANKABLE PROJECT FEASIBILITY",
+        "tagline": "Bank-ready project reports, financial models, and feasibility documentation.",
+        "overview": "A Detailed Project Report (DPR) or Techno-Economic Viability (TEV) study is the cornerstone for securing bank term loans, consortium project finance, SIDBI assistance, and central/state industrial capital investment subsidies. ARVISTA prepares comprehensive, bank-compliant DPRs encompassing market dynamics, manufacturing capacity, engineering civil estimates, cash-flow models, sensitivity analyses, and CMA data vetted by chartered accountants.",
+        "keyDeliverables": [
+            "Detailed Project Report (DPR) tailored to bank underwriting formats",
+            "5 to 10-year comprehensive financial projections (P&L, Balance Sheet, Cash Flow)",
+            "DSCR, IRR, break-even point (BEP), and financial sensitivity modeling",
+            "Techno-Economic Viability (TEV) assessment for large capital investments",
+            "Credit Monitoring Arrangement (CMA) data preparation for bank syndicates",
+            "State industrial policy subsidy eligibility assessment and filing documentation",
+            "Direct representation during bank credit appraisal meetings"
+        ],
+        "process": [
+            {
+                "step": "Project Scoping",
+                "detail": "Deep-dive consultation with project promoters to define plant capacity, capital expenditure, and commercial timelines."
+            },
+            {
+                "step": "Market & Technical Analysis",
+                "detail": "Conduct sector benchmarking, technical plant feasibility, and supply-chain logistics evaluations."
+            },
+            {
+                "step": "Financial Modeling",
+                "detail": "Build dynamic financial models assessing debt service coverage, working capital cycles, and investor IRR."
+            },
+            {
+                "step": "Bank Delivery & Defense",
+                "detail": "Deliver certified bankable reports and support founders in answering technical credit queries from bankers."
+            }
+        ],
+        "faqs": [
+            {
+                "q": "Which banks accept ARVISTA Detailed Project Reports?",
+                "a": "Our reports are accepted by all major nationalised banks (SBI, Canara, PNB, Union Bank), premier private banks (HDFC, ICICI, Federal Bank), SIDBI, and state industrial development corporations."
+            },
+            {
+                "q": "Can your DPR be used to claim government capital subsidies?",
+                "a": "Yes. We format DPRs in compliance with PMEGP, CGTMSE, Kerala State Industrial Development Corporation (KSIDC), and central MSME capital subsidy schemes."
+            },
+            {
+                "q": "What key financial indicators do banks scrutinize in a DPR?",
+                "a": "Lenders evaluate the Debt Service Coverage Ratio (DSCR, ideally 1.5–2.0), Internal Rate of Return (IRR), Return on Capital Employed (ROCE), and promoter equity margin."
+            }
+        ],
+    },
+    {
+        "slug": "pollution-control-clearance",
+        "name": "Pollution Control Board Clearance",
+        "desc": "State PCB industrial categorization, Consent to Establish (CTE) & Consent to Operate (CTO).",
+        "icon": "eco",
+        "heroSubtitle": "ENVIRONMENTAL CLEARANCE & PCB SANCTIONS",
+        "tagline": "State PCB consents, environmental clearances, and statutory waste management.",
+        "overview": "Industrial manufacturing units, healthcare facilities, commercial hospitality ventures, and residential complexes must obtain Consent to Establish (CTE) and Consent to Operate (CTO) from the State Pollution Control Board (KSPCB). ARVISTA manages the end-to-end statutory process: Red/Orange/Green/White sector classification, effluent treatment design review, online OCMMS filing, field inspection liaison, and renewable consent renewals.",
+        "keyDeliverables": [
+            "Industrial categorization analysis under Red, Orange, Green, and White classifications",
+            "Consent to Establish (CTE) application filing on KSPCB OCMMS portal",
+            "Consent to Operate (CTO) application procurement prior to commercial production",
+            "Effluent Treatment Plant (ETP) / Sewage Treatment Plant (STP) layout schematic advisory",
+            "Air emission stacks, generator acoustic hoods, and ambient noise compliance documentation",
+            "Hazardous waste management authorization and biomedical waste compliance",
+            "Liaison during board engineer site inspections and query clarifications"
+        ],
+        "process": [
+            {
+                "step": "Industry Classification",
+                "detail": "Determine precise environmental category (Red/Orange/Green/White) based on pollution index score and raw materials."
+            },
+            {
+                "step": "Technical Documentation",
+                "detail": "Prepare manufacturing process flowcharts, water balance charts, and waste mitigation schematics."
+            },
+            {
+                "step": "Portal Submission",
+                "detail": "Submit electronic application through KSPCB OCMMS with statutory fee remittance."
+            },
+            {
+                "step": "Inspection & Order Procurement",
+                "detail": "Assist during board engineer factory inspection and secure formal Consent Order."
+            }
+        ],
+        "faqs": [
+            {
+                "q": "What is the operational difference between CTE and CTO?",
+                "a": "Consent to Establish (CTE) must be secured before starting civil construction or placing plant machinery. Consent to Operate (CTO) is secured after installation and before commercial production starts."
+            },
+            {
+                "q": "What happens if a facility operates without PCB consent?",
+                "a": "Section 33A of the Water Act and Section 31A of the Air Act authorize the board to order immediate closure, electricity disconnection, and levy severe environmental damage compensation."
+            },
+            {
+                "q": "How long is PCB consent valid?",
+                "a": "Validity ranges from 1 year to 5 years depending on whether the unit falls under the Red, Orange, or Green category, after which timely renewal is required."
+            }
+        ],
+    },
+    {
+        "slug": "land-data-bank-conversion",
+        "name": "Land & Data Bank Conversion",
+        "desc": "Kerala Conservation of Paddy Land & Wetland Act Form 5, 6, 7 & 9 filings & KLU sanctions.",
+        "icon": "landscape",
+        "heroSubtitle": "STATUTORY LAND USE CONVERSION",
+        "tagline": "Statutory conversion of paddy land, wetland, and unnotified land for commercial development.",
+        "overview": "Utilizing land parcels for industrial, commercial, or institutional projects in Kerala requires rigorous compliance with the Kerala Conservation of Paddy Land and Wetland Act, 2008. ARVISTA manages Form 5 (Data Bank exclusion), Form 6 (land use conversion for unnotified land), Form 7 (commercial classification changes), and Kerala Land Utilisation (KLU) orders through RDOs, Tahsildars, and the District Collectorate.",
+        "keyDeliverables": [
+            "Comprehensive revenue record and local body Data Bank status scrutiny",
+            "Form 5 application filing for exclusion of wrongfully classified land from Data Bank",
+            "KSREC satellite imagery analysis and historical land profile verification",
+            "Form 6 application for permission to use unnotified land for commercial/residential purposes",
+            "Form 7 application for change in nature of unnotified land exceeding statutory ceilings",
+            "Treasury fee calculation and challan deposit coordination",
+            "Village Officer, Agricultural Officer (Krishi Bhavan), and RDO hearing representation",
+            "Procurement of final conversion order and land revenue B-Register mutation"
+        ],
+        "process": [
+            {
+                "step": "Status Scrutiny",
+                "detail": "Examine village B-Register, Thandapper, and Local Level Monitoring Committee (LLMC) Data Bank records."
+            },
+            {
+                "step": "Application Assembly",
+                "detail": "Prepare survey sketch, boundary demarcation, and KSREC satellite study application."
+            },
+            {
+                "step": "Administrative Follow-up",
+                "detail": "Represent client before Agricultural Officer, Village Officer, and RDO during local site inspections."
+            },
+            {
+                "step": "Final Sanction",
+                "detail": "Obtain statutory conversion order and update land tax category from Nilam to Purayidom."
+            }
+        ],
+        "faqs": [
+            {
+                "q": "What is a Form 5 application?",
+                "a": "Form 5 is filed to remove a property erroneously included in the Data Bank as paddy land or wetland, supported by satellite imagery showing prior conversion."
+            },
+            {
+                "q": "What is the government fee for land conversion under Form 6?",
+                "a": "Land up to 25 cents is exempt from government conversion fees. Above 25 cents, fees are calculated as a percentage of the government fair value of the land."
+            },
+            {
+                "q": "How long does the land conversion process take in Kerala?",
+                "a": "Typically 3 to 9 months depending on the jurisdiction, KSREC report turnaround, and RDO hearing schedules."
+            }
+        ],
+    },
+    {
+        "slug": "building-land-valuation",
+        "name": "Turnkey Asset & Project Valuation",
+        "desc": "Government & bank panel registered valuer reports for capital loans, syndicates and equity.",
+        "icon": "home_work",
+        "heroSubtitle": "CERTIFIED ASSET VALUATION",
+        "tagline": "Registered valuer reports for project finance, banking syndication, and statutory tax filing.",
+        "overview": "ARVISTA delivers certified valuation reports through IBBI-registered valuers for commercial land, industrial factories, hospital complexes, plant & machinery. Our valuations conform to International Valuation Standards (IVS) and are accepted across public and private sector banks, financial institutions, debt recovery tribunals, and income tax authorities under Section 50C.",
+        "keyDeliverables": [
+            "On-site physical inspection, engineering measurements, and boundary verification",
+            "Fair Market Value (FMV), Realizable Value, and Distress Sale Value (DSV) assessment",
+            "Detailed building cost estimation using CPWD/State PWD schedule of rates",
+            "Depreciation analysis for industrial buildings, plant, and machinery",
+            "Certification by IBBI Registered Valuer with official seal and registration credentials",
+            "Formats conforming specifically to bank consortium and financial institution underwriting",
+            "Capital gains tax valuation (Section 50C / 54F) for income tax proceedings"
+        ],
+        "process": [
+            {
+                "step": "Physical Inspection",
+                "detail": "Registered valuer and civil engineering team conduct physical site measurements, structural inspection, and photo inventory."
+            },
+            {
+                "step": "Market Benchmarking",
+                "detail": "Cross-reference government guideline values, recent registered transactions, and infrastructural growth in the vicinity."
+            },
+            {
+                "step": "Computation",
+                "detail": "Apply recognized valuation methodologies: Cost Approach, Market Approach, and Income Capitalization."
+            },
+            {
+                "step": "Certification",
+                "detail": "Issue formally certified valuation report with supporting maps, drawings, and valuer affidavits."
+            }
+        ],
+        "faqs": [
+            {
+                "q": "Who are IBBI Registered Valuers?",
+                "a": "Valuers licensed by the Insolvency and Bankruptcy Board of India under the Companies Act, whose reports carry statutory evidentiary value."
+            },
+            {
+                "q": "Which financial institutions accept ARVISTA valuation reports?",
+                "a": "SBI, Canara Bank, HDFC, ICICI, Federal Bank, South Indian Bank, SIDBI, NBFCs, and state financial institutions."
+            },
+            {
+                "q": "How quickly can a valuation report be delivered?",
+                "a": "Standard valuation reports are delivered within 7 to 10 working days following site inspection. Express timelines can be arranged for critical loan deadlines."
+            }
+        ],
+    },
+    {
+        "slug": "industrial-zoning-noc",
+        "name": "Single Window & Industrial Clearances",
+        "desc": "District Industries Centre (DIC), Single Window Clearance Board & Fire/Safety sanctions.",
+        "icon": "fact_check",
+        "heroSubtitle": "INTEGRATED INDUSTRIAL SANCTIONS",
+        "tagline": "Fast-track composite industrial sanctions through Single Window Clearance Boards.",
+        "overview": "Commissioning an industrial plant or large commercial project in Kerala requires clearances across multiple statutory departments: District Industries Centre (DIC), Town & Country Planning, Fire & Rescue Services, Electrical Inspectorate, Factory Inspectorate, and local bodies. ARVISTA prepares composite dossiers and represents projects before the District Single Window Clearance Board to secure binding composite clearances within statutory time limits.",
+        "keyDeliverables": [
+            "District Industries Centre (DIC) MSME / Large Enterprise project registration",
+            "District Single Window Clearance Board composite application preparation and filing",
+            "Fire & Rescue Services Department No Objection Certificate (Fire NOC)",
+            "Town & Country Planning layout approval and commercial zoning permissions",
+            "Chief Electrical Inspectorate (CEI) power scheme sanction liaison",
+            "Factory Inspectorate plan approval and structural stability verification",
+            "Expedited composite clearance license issuance"
+        ],
+        "process": [
+            {
+                "step": "Master Scoping",
+                "detail": "Review civil master plans, electrical power connected load requirements, and hazard profiles."
+            },
+            {
+                "step": "Composite Dossier Preparation",
+                "detail": "Compile comprehensive drawings, environmental reports, and structural safety documents."
+            },
+            {
+                "step": "Single Window Filing",
+                "detail": "Submit composite dossier to the District Single Window Board under the Industrial Single Window Act."
+            },
+            {
+                "step": "Agency Coordination & Sanction",
+                "detail": "Coordinate synchronized technical inspections across departments and secure formal composite clearance."
+            }
+        ],
+        "faqs": [
+            {
+                "q": "What is the advantage of the Single Window Clearance Board?",
+                "a": "It provides a statutory, legally binding mechanism where applications must be decided within 30 days. Deemed clearance provisions apply if departments fail to respond in time."
+            },
+            {
+                "q": "When is a Fire NOC mandatory for projects?",
+                "a": "Mandatory for buildings taller than 15 meters, assembly occupancies, hazardous industrial units, hospitals, and commercial complexes with floor areas exceeding statutory thresholds."
+            },
+            {
+                "q": "Does ARVISTA handle follow-up with all individual departments?",
+                "a": "Yes. Our specialized industrial liaison team attends site visits and coordinates directly with engineers in each technical wing."
+            }
+        ],
+    },
+    {
+        "slug": "railway-metro-noc",
+        "name": "Infrastructure Corridor NOCs",
+        "desc": "Railway perimeter clearances, Kochi Metro corridor approvals & utility crossings.",
+        "icon": "train",
+        "heroSubtitle": "INFRASTRUCTURE CORRIDORS & STRATEGIC NOCS",
+        "tagline": "Statutory approvals for construction adjacent to rail, metro, and national highway corridors.",
+        "overview": "Civil construction, access roads, overbridges, high-tension lines, or utility pipeline crossings in proximity to Indian Railways (Southern Railway), Kochi Metro Rail (KMRL) corridors, or National Highways Authority of India (NHAI) require formal No Objection Certificates. ARVISTA manages technical vetting, engineering submissions, joint field inspections, and sanction orders.",
+        "keyDeliverables": [
+            "Railway boundary buffer zone and track alignment proximity assessment",
+            "Southern Railway Division Engineer application preparation and technical plan submission",
+            "Kochi Metro Rail Limited (KMRL) corridor NOC for construction within protected zones",
+            "NHAI highway access permission and pipeline/cable underground crossing sanctions",
+            "Structural stability and foundation depth verification by empaneled chartered engineers",
+            "Joint field inspection coordination with infrastructure divisional engineers",
+            "Formal corridor clearance delivery and compliance monitoring"
+        ],
+        "process": [
+            {
+                "step": "Proximity Assessment",
+                "detail": "Survey exact distance from outermost railway rail, metro viaduct pier, or national highway right-of-way."
+            },
+            {
+                "step": "Engineering Plan Assembly",
+                "detail": "Prepare structural cross-sections, piling depths, foundation designs, and drainage mitigation plans."
+            },
+            {
+                "step": "Departmental Submission",
+                "detail": "Submit formal files to the Divisional Railway Manager (DRM) or KMRL Technical Directorate."
+            },
+            {
+                "step": "Field Inspection & Clearance",
+                "detail": "Participate in joint site inspections with railway/metro engineers and obtain formal NOC."
+            }
+        ],
+        "faqs": [
+            {
+                "q": "What is the railway buffer zone for building construction?",
+                "a": "Generally, construction within 30 meters from the outermost railway track requires a formal Railway NOC to ensure structural safety and train transit integrity."
+            },
+            {
+                "q": "Is Metro NOC mandatory for properties adjacent to the metro line?",
+                "a": "Yes. Construction within 20 meters from either side of the metro viaduct or station footprint requires statutory KMRL clearance."
+            },
+            {
+                "q": "How long does an infrastructure NOC process take?",
+                "a": "Typically 30 to 60 working days depending on division board schedules and engineering verifications."
+            }
+        ],
+    }
+],
   accounting: [
     {
       slug: 'gst-registration',
@@ -671,8 +1187,6 @@ export const servicesData = {
         { q: 'Can I register voluntarily below the threshold?', a: 'Yes. Voluntary registration is allowed and is beneficial for availing Input Tax Credit on purchases.' },
         { q: 'How long does GST registration take?', a: 'Typically 3–7 working days if all documents are in order and Aadhaar authentication is completed.' }
       ],
-      timeline: '3–7 working days',
-      startingPrice: '₹1,999'
     },
     { slug: 'gst-return-filing', name: 'GST Return Filing', desc: 'Monthly GSTR-1, 3B, annual 9/9C reconciliation & ITC recovery.', icon: 'calculate', heroSubtitle: 'TAX COMPLIANCE', tagline: 'Timely, accurate GST return filings with maximum ITC recovery.', overview: 'GST compliance requires monthly filing of GSTR-1 (outward supplies), GSTR-3B (summary return), and annual GSTR-9/9C reconciliation. ARVISTA ensures timely filing, accurate ITC matching, and proactive identification of mismatches to prevent show-cause notices and interest liabilities.', keyDeliverables: ['Monthly GSTR-1 & GSTR-3B filing', 'Quarterly GSTR-1 (for QRMP scheme)', 'Annual GSTR-9 & GSTR-9C reconciliation', 'ITC reconciliation with GSTR-2B', 'E-way bill compliance advisory', 'GST audit support and documentation'], process: [{ step: 'Data Collection', detail: 'Monthly collection of sales, purchase invoices, and credit/debit notes.' }, { step: 'Reconciliation', detail: 'Match purchase data with GSTR-2B for ITC eligibility confirmation.' }, { step: 'Return Filing', detail: 'File GSTR-1 by 11th and GSTR-3B by 20th of following month.' }, { step: 'Annual Return', detail: 'Prepare and file GSTR-9/9C annual reconciliation by December 31.' }], faqs: [{ q: 'What is the late filing penalty for GSTR-3B?', a: '₹50/day for nil returns and ₹100/day for non-nil returns, subject to a maximum of ₹5,000 per return.' }, { q: 'What is ITC reconciliation?', a: 'Matching your purchase records with supplier filings in GSTR-2B to ensure you claim only eligible Input Tax Credit.' }, { q: 'Can ARVISTA handle multi-state GST filings?', a: 'Yes. We manage filings for businesses with GSTINs in multiple states from a single point of contact.' }], timeline: 'Monthly ongoing', startingPrice: '₹1,499/month' },
     { slug: 'income-tax-filing', name: 'Income Tax Filing (ITR)', desc: 'Corporate, firm & high-net-worth individual structured returns.', icon: 'savings', heroSubtitle: 'INCOME TAX', tagline: 'Structured, optimised tax returns for entities and individuals.', overview: 'ARVISTA files income tax returns for companies, firms, HUFs, trusts, and high-net-worth individuals with a focus on legitimate tax optimisation, accurate computation, and compliance with the latest Finance Act provisions. We handle ITR-1 through ITR-7, advance tax calculations, capital gains computation, and international taxation matters.', keyDeliverables: ['ITR preparation and e-filing for all entity types', 'Advance tax computation and payment advisory', 'Capital gains tax computation (equity, property, crypto)', 'TDS credit matching with Form 26AS & AIS', 'Tax planning and legitimate savings advisory', 'Response to income tax notices and scrutiny'], process: [{ step: 'Information Gathering', detail: 'Collect financial statements, Form 16/16A, bank statements, investment proofs, and AIS.' }, { step: 'Tax Computation', detail: 'Compute taxable income, apply deductions, calculate tax liability under old/new regime.' }, { step: 'ITR Filing', detail: 'Prepare and e-file the correct ITR form with digital signature or EVC verification.' }, { step: 'Post-Filing', detail: 'Verify filing acknowledgment, track refund status, and retain documentation for record.' }], faqs: [{ q: 'Which ITR form should I file?', a: 'It depends on your income sources and entity type. Salaried individuals file ITR-1/2, businesses file ITR-3/4, companies file ITR-6, and trusts file ITR-7.' }, { q: 'What is the due date for filing ITR?', a: 'July 31 for individuals/HUFs (non-audit), October 31 for businesses requiring audit, November 30 for transfer pricing cases.' }, { q: 'Can you help with tax-saving investments?', a: 'Yes. We provide comprehensive tax planning advisory covering 80C, 80D, 80G, and other deduction sections before year-end.' }], timeline: '3–7 working days', startingPrice: '₹2,999' },

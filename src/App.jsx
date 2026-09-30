@@ -1,6 +1,6 @@
+import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Pillars from './components/Pillars'
-import AllServices from './components/AllServices'
 import About from './components/About'
 import Process from './components/Process'
 import Testimonials from './components/Testimonials'
@@ -10,9 +10,9 @@ import ContactFooter from './components/ContactFooter'
 function App() {
   return (
     <main className="w-full">
+      <Navbar />
       <Hero />
       <Pillars />
-      <AllServices />
       <About />
       <Process />
       <Testimonials />
